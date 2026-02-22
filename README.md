@@ -38,7 +38,7 @@ This landing page is designed for "Casa Nouă" (New Home), a renovation company 
 *Service cards with detailed modal popups*
 
 ### Interactive Process Flow
-![Process](screenshots/processScreen.png)
+![Process](screenshots/process.png)
 *Visual process representation with interactive hover states*
 
 ### Portfolio Gallery
@@ -51,7 +51,7 @@ This landing page is designed for "Casa Nouă" (New Home), a renovation company 
 
 ## 🚀 Live Demo
 
-**[View Live Demo](#)** *(https://drive.google.com/file/d/1gEFq_VBaLyIS6O49Qokg8yrhPQGrfVUN/view?usp=drive_link)*
+**[View Live Demo](https://drive.google.com/file/d/1gEFq_VBaLyIS6O49Qokg8yrhPQGrfVUN/view?usp=drive_link)** 
 
 ## 📂 Project Structure
 
