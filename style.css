@@ -506,3 +506,164 @@ a {
   color: #ffffff;
   transform: translateX(5px);
 }
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 40px 50px;
+  border-radius: 20px;
+  max-width: 70vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideDown 0.3s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: 300;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #1a1a1a;
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.modal-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.modal-description {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.modal-sections {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.modal-section {
+  flex: 1;
+}
+
+.modal-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 15px;
+}
+
+.modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.modal-list li {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  padding: 8px 0;
+  padding-left: 10px;
+}
+
+.modal-cta {
+  margin-top: 40px;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-btn {
+  display: inline-block;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.modal-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Scrollbar styling for modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

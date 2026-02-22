@@ -21,7 +21,7 @@
           <li><a href="#portfolio">Portofoliu</a></li>
         </ul>
 
-        <a href="#contact" class="nav-contact">Contactează-ne</a>
+        <a href="tel:+37376009015" class="nav-contact">Contactează-ne</a>
       </nav>
     </div>
   </header>
@@ -41,7 +41,7 @@
             De la bucătării la remodelări complete, ne ocupăm de fiecare detaliu cu grijă.
           </p>
           <div class="cta-group">
-            <a href="#contact" class="btn btn-primary">
+            <a href="tel:+37376009015" class="btn btn-primary">
               Ia legătura cu noi
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
             </a>
@@ -77,7 +77,7 @@
               Transformăm complet spațiile tale prin renovări structurale complexe, 
               asigurând calitate și durabilitate pe termen lung.
             </p>
-            <a href="#" class="service-link">Află mai multe →</a>
+            <a href="#" class="service-link" data-service="1">Află mai multe →</a>
           </div>
         </div>
 
@@ -90,7 +90,7 @@
               De la vopsitorie la gresie și faianță, oferim finisaje interioare 
               impecabile care adaugă eleganță și stil locuinței tale.
             </p>
-            <a href="#" class="service-link">Află mai multe →</a>
+            <a href="#" class="service-link" data-service="2">Află mai multe →</a>
           </div>
           <div class="service-image">
             <img src="photos/service2.png" alt="Finisaje interioare">
@@ -109,7 +109,7 @@
               Instalații moderne și sigure, executate de specialiști autorizați 
               pentru confortul și siguranța casei tale.
             </p>
-            <a href="#" class="service-link">Află mai multe →</a>
+            <a href="#" class="service-link" data-service="3">Află mai multe →</a>
           </div>
         </div>
 
@@ -122,7 +122,7 @@
               Montăm diverse tipuri de pardoseli și tâmplărie personalizată 
               pentru a finaliza perfect orice proiect de renovare.
             </p>
-            <a href="#" class="service-link">Află mai multe →</a>
+            <a href="#" class="service-link" data-service="4">Află mai multe →</a>
           </div>
           <div class="service-image">
             <img src="photos/service4.png" alt="Montaj pardoseli și tâmplărie">
@@ -131,6 +131,155 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal Structure -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    // Service details data
+    const serviceDetails = {
+      1: {
+        title: "Renovări generale și structurale",
+        subtitle: "Transformăm spațiul de la bază",
+        description: "Executăm lucrările esențiale care stau la baza unei renovări durabile și sigure.",
+        tasks: [
+          "Demolări controlate și pregătirea spațiului",
+          "Compartimentări interioare (rigips/zidărie)",
+          "Turnare șape și nivelare pardoseli",
+          "Izolații termice și fonice"
+        ],
+        benefits: [
+          "Structură solidă și durabilă",
+          "Confort termic și fonic îmbunătățit",
+          "Spațiu reorganizat eficient"
+        ]
+      },
+      2: {
+        title: "Finisaje interioare",
+        subtitle: "Detalii care dau viață locuinței",
+        description: "Realizăm finisaje moderne, curate și durabile, cu atenție la fiecare detaliu.",
+        tasks: [
+          "Gletuire și vopsire profesională",
+          "Montaj gresie și faianță",
+          "Tencuieli decorative și placări",
+          "Tapet și elemente decorative"
+        ],
+        benefits: [
+          "Aspect modern și elegant",
+          "Durabilitate în timp",
+          "Creșterea valorii locuinței"
+        ]
+      },
+      3: {
+        title: "Instalații electrice și sanitare",
+        subtitle: "Siguranță și funcționalitate fără compromisuri",
+        description: "Modernizăm instalațiile pentru confort, eficiență și siguranță pe termen lung.",
+        tasks: [
+          "Refacerea instalației electrice",
+          "Montaj iluminat interior",
+          "Instalații sanitare și termice",
+          "Montaj obiecte sanitare și calorifere",
+          "Încălzire în pardoseală (opțional)"
+        ],
+        benefits: [
+          "Siguranță electrică sporită",
+          "Consum energetic optimizat",
+          "Confort termic superior"
+        ]
+      },
+      4: {
+        title: "Montaj pardoseli și tâmplărie",
+        subtitle: "Finisajele care definesc rezultatul final",
+        description: "Montaj precis pentru pardoseli, uși și ferestre, cu un aspect elegant și durabil.",
+        tasks: [
+          "Montaj parchet, laminat sau vinil",
+          "Montaj plinte și profile",
+          "Montaj uși interioare/exterioare",
+          "Montaj ferestre PVC sau aluminiu"
+        ],
+        benefits: [
+          "Finisaje premium",
+          "Izolare termică și fonică mai bună",
+          "Durabilitate și precizie"
+        ]
+      }
+    };
+
+    // Get modal elements
+    const modal = document.getElementById('serviceModal');
+    const modalBody = document.getElementById('modalBody');
+    const closeBtn = document.querySelector('.modal-close');
+
+    // Open modal function
+    function openModal(serviceId) {
+      const service = serviceDetails[serviceId];
+      
+      let tasksHTML = service.tasks.map(task => `<li>— ${task}</li>`).join('');
+      let benefitsHTML = service.benefits.map(benefit => `<li>— ${benefit}</li>`).join('');
+      
+      modalBody.innerHTML = `
+        <h2 class="modal-title">${service.title}</h2>
+        <p class="modal-subtitle">${service.subtitle}</p>
+        <p class="modal-description">${service.description}</p>
+        
+        <div class="modal-sections">
+          <div class="modal-section">
+            <h3 class="modal-section-title">Ce realizăm</h3>
+            <ul class="modal-list">${tasksHTML}</ul>
+          </div>
+          
+          <div class="modal-section">
+            <h3 class="modal-section-title">Beneficii</h3>
+            <ul class="modal-list">${benefitsHTML}</ul>
+          </div>
+        </div>
+        
+        <div class="modal-cta">
+          <a href="tel:+37376009015" class="modal-btn">Fă o programare</a>
+        </div>
+      `;
+      
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal function
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Add click events to service links
+    document.querySelectorAll('.service-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const serviceId = this.getAttribute('data-service');
+        openModal(serviceId);
+      });
+    });
+
+    // Close modal when clicking X
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 
 </html>
