@@ -17,8 +17,8 @@
 
         <ul class="nav-menu">
           <li><a href="#services">Servicii</a></li>
-          <li><a href="#about">Despre noi</a></li>
           <li><a href="#portfolio">Portofoliu</a></li>
+          <li><a href="#about">Despre noi</a></li>
         </ul>
 
         <a href="tel:+37376009015" class="nav-contact">Contactează-ne</a>
@@ -198,12 +198,74 @@
     </div>
   </section>
 
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <h2 class="portfolio-title">Lucrările noastre</h2>
+        <p class="portfolio-description">
+          Explorează o selecție din proiectele noastre finalizate și descoperă 
+          calitatea execuției și atenția la detalii care ne definesc.
+        </p>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item portfolio-large">
+          <img src="photos/portfolio1.jpg" alt="Proiect renovare 1">
+          <div class="portfolio-overlay">
+            <h3>Renovare completă apartament</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item portfolio-large">
+          <img src="photos/portfolio2.jpg" alt="Proiect renovare 2">
+          <div class="portfolio-overlay">
+            <h3>Bucătărie modernă</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item portfolio-tall">
+          <img src="photos/portfolio3.jpg" alt="Proiect renovare 3">
+          <div class="portfolio-overlay">
+            <h3>Baie de lux</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="photos/portfolio4.jpg" alt="Proiect renovare 4">
+          <div class="portfolio-overlay">
+            <h3>Living elegant</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item portfolio-large">
+          <img src="photos/portfolio5.jpg" alt="Proiect renovare 5">
+          <div class="portfolio-overlay">
+            <h3>Dormitor modern</h3>
+          </div>
+        </div>
+        
+        <div class="portfolio-item">
+          <img src="photos/portfolio6.jpg" alt="Proiect renovare 6">
+          <div class="portfolio-overlay">
+            <h3>Hol și coridor</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modal Structure -->
   <div id="serviceModal" class="modal">
     <div class="modal-content">
       <span class="modal-close">&times;</span>
       <div id="modalBody"></div>
     </div>
+  </div>
+
+  <!-- Lightbox for Portfolio Images -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightboxImage">
   </div>
 
   <script>
@@ -412,6 +474,45 @@
         }
       });
     }
+
+    // Portfolio lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    // Open lightbox when clicking on portfolio item
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close lightbox when clicking X
+    lightboxClose.addEventListener('click', function() {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
   </script>
 </body>
 
