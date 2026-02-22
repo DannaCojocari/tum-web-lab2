@@ -1,24 +1,79 @@
-# Lab 2 - Landing page
+# Casa Nouă - Renovation Company Landing Page
 
-Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
+A modern, responsive landing page for a professional renovation and construction company based in Moldova. The website showcases services, process workflow, portfolio, and company information with an elegant beige color scheme and smooth interactions.
 
-> For a maximal grade, the website should be for a real client (your/friends/relatives business), otherwise -1-2 points
+## 🎯 Project Overview
 
-## Customer requirements
+This landing page is designed for "Casa Nouă" (New Home), a renovation company specializing in:
+- General and structural renovations
+- Interior finishes
+- Electrical and plumbing installations
+- Flooring and carpentry installation
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+## ✨ Features
 
-## Dev requirements
+- **Responsive Design** - Fully responsive layout that works on all devices
+- **Interactive Hero Section** - Animated text reveal with background image
+- **Services Section** - Detailed modal popups for each service with tasks and benefits
+- **Interactive Process Flow** - Visual representation of the renovation process with hover effects
+- **Portfolio Gallery** - Masonry-style grid with lightbox functionality
+- **About Section** - Company information with key features
+- **Contact Footer** - Complete contact information and quick navigation
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+## 🛠️ Technologies Used
 
-## Other requirements:
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with Grid and Flexbox
+- **Vanilla JavaScript** - For interactive modals, lightbox, and animations
+- **System Fonts** - Clean typography with no external dependencies
 
-- For potential maximal mark, a WIP version should be submitted during the class
-- Use index.html, reset.css
+## 📸 Screenshots
+
+### Hero Section
+![Hero Section](screenshots/hero.png)
+*Animated hero section with compelling headline and call-to-action buttons*
+
+### Services with Modal
+![Services](screenshots/services.png)
+*Service cards with detailed modal popups*
+
+### Interactive Process Flow
+![Process](screenshots/processScreen.png)
+*Visual process representation with interactive hover states*
+
+### Portfolio Gallery
+![Portfolio](screenshots/portfolio.png)
+*Masonry-style portfolio with lightbox image viewer*
+
+### About Section
+![About](screenshots/about.png)
+*Company information with key features*
+
+## 🚀 Live Demo
+
+**[View Live Demo](#)** *(https://drive.google.com/file/d/1gEFq_VBaLyIS6O49Qokg8yrhPQGrfVUN/view?usp=drive_link)*
+
+## 📂 Project Structure
+
+```
+tum-web-lab2/
+├── index.html          # Main HTML file
+├── style.css           # Complete styling
+├── reset.css           # CSS reset
+├── photos/             # Image assets
+│   ├── background.png
+│   ├── service1-4.png
+│   ├── process.png
+│   ├── portfolio1-6.jpg
+│   ├── about.jpg
+│   └── right-up.png
+└── README.md           # This file
+```
+
+## 🎨 Color Palette
+
+- **Primary Beige**: `#f5e6d3`, `#f0dfc9`, `#fff4efc1`
+- **Brown Accents**: `#8b6f47`, `#9b6250`, `#73594d`
+- **Text**: `#1a1a1a`, `#333`, `#666`
+- **Background**: `#ffffff`
+
