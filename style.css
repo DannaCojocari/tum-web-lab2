@@ -507,6 +507,153 @@ a {
   transform: translateX(5px);
 }
 
+/* Process Section */
+.process {
+  padding: 3vh 1.5vw;
+  background: #fff4efc1;
+  margin: 1%;
+  border-radius: 20px;
+}
+
+.process-layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.process-left {
+  padding-right: 20px;
+}
+
+.process-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.process-description {
+  font-size: 1.25rem;
+  color: #5a4a3a;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.process-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.process-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Process Flow - Middle Column */
+.process-flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 10vh 0;
+}
+
+.flow-line {
+  position: absolute;
+  left: 50%;
+  top: 10vh;
+  bottom: 10vh;
+  width: 3px;
+  background: linear-gradient(to bottom, #d4b896 0%, #c9a97a 50%, #d4b896 100%);
+  transform: translateX(-50%);
+}
+
+.flow-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flow-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f0dfc9;
+  color: #a08060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(194, 145, 117, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.flow-number:hover {
+  transform: scale(1.1);
+}
+
+.flow-number.active {
+  background: #9b6250;
+  color: #ffffff;
+  box-shadow: 0 6px 25px rgba(153, 99, 78, 0.695);
+  transform: scale(1.15);
+}
+
+/* Process Steps - Right Column */
+.process-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 20px;
+  padding-top: 8vh;
+}
+
+.process-step {
+  padding: 20px 0;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.process-step:hover,
+.process-step.highlight {
+  transform: translateX(10px);
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.process-step.highlight .step-title {
+  color: #000000;
+}
+
+.step-text {
+  font-size: 1.1rem;
+  color: #5a4a3a;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+.process-step.highlight .step-text {
+  color: #3a2a1a;
+}
+
 /* Modal Styles */
 .modal {
   display: none;

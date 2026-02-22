@@ -132,6 +132,72 @@
     </div>
   </section>
 
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-layout">
+        <!-- Left Side: Title, Description, and Image -->
+        <div class="process-left">
+          <h2 class="process-title">Procesul de renovare</h2>
+          <p class="process-description">
+            Fiecare proiect este gestionat profesional, de la planificare până la finalizare, 
+            pentru a asigura rezultate de calitate și satisfacția completă a clientului.
+          </p>
+          <div class="process-image">
+            <img src="photos/process.png" alt="Procesul de renovare">
+          </div>
+        </div>
+
+        <!-- Middle: Process Flow -->
+        <div class="process-flow">
+          <div class="flow-line"></div>
+          <div class="flow-step" data-step="1">
+            <div class="flow-number">1</div>
+          </div>
+          <div class="flow-step" data-step="2">
+            <div class="flow-number">2</div>
+          </div>
+          <div class="flow-step" data-step="3">
+            <div class="flow-number">3</div>
+          </div>
+          <div class="flow-step" data-step="4">
+            <div class="flow-number">4</div>
+          </div>
+        </div>
+
+        <!-- Right Side: Process Steps -->
+        <div class="process-right">
+          <div class="process-step">
+            <h3 class="step-title">Planificare și evaluare</h3>
+            <p class="step-text">
+              Se analizează spațiul, se stabilesc lucrările necesare, bugetul și materialele.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <h3 class="step-title">Pregătirea și lucrările de bază</h3>
+            <p class="step-text">
+              Se îndepărtează elementele vechi și se execută lucrările structurale și instalațiile necesare.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <h3 class="step-title">Finisaje și montaj</h3>
+            <p class="step-text">
+              Se realizează finisajele interioare și se montează pardoselile, ușile și elementele decorative.
+            </p>
+          </div>
+
+          <div class="process-step">
+            <h3 class="step-title">Verificare și finalizare</h3>
+            <p class="step-text">
+              Se montează echipamentele finale, se fac verificările și curățenia, iar spațiul devine gata de utilizare.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modal Structure -->
   <div id="serviceModal" class="modal">
     <div class="modal-content">
@@ -279,6 +345,73 @@
         closeModal();
       }
     });
+
+    // Process section interactivity
+    const processSteps = document.querySelectorAll('.process-step');
+    const flowNumbers = document.querySelectorAll('.flow-number');
+    
+    // Set first step as active by default
+    if (flowNumbers.length > 0) {
+      flowNumbers[0].classList.add('active');
+    }
+    
+    // Hover on process text steps
+    processSteps.forEach((step, index) => {
+      step.addEventListener('mouseenter', function() {
+        // Remove active class from all
+        flowNumbers.forEach(num => num.classList.remove('active'));
+        processSteps.forEach(s => s.classList.remove('highlight'));
+        
+        // Add active class to corresponding number
+        if (flowNumbers[index]) {
+          flowNumbers[index].classList.add('active');
+        }
+        
+        // Add highlight to this step
+        step.classList.add('highlight');
+      });
+    });
+    
+    // Hover on flow numbers
+    flowNumbers.forEach((flowNumber, index) => {
+      flowNumber.addEventListener('mouseenter', function() {
+        // Remove active class from all
+        flowNumbers.forEach(num => num.classList.remove('active'));
+        processSteps.forEach(step => step.classList.remove('highlight'));
+        
+        // Add active class to this number
+        flowNumber.classList.add('active');
+        
+        // Add highlight to corresponding text
+        if (processSteps[index]) {
+          processSteps[index].classList.add('highlight');
+        }
+      });
+    });
+    
+    // Reset to first on mouse leave from process section
+    const processSection = document.querySelector('.process-right');
+    if (processSection) {
+      processSection.addEventListener('mouseleave', function() {
+        flowNumbers.forEach(num => num.classList.remove('active'));
+        processSteps.forEach(step => step.classList.remove('highlight'));
+        if (flowNumbers[0]) {
+          flowNumbers[0].classList.add('active');
+        }
+      });
+    }
+    
+    // Reset to first on mouse leave from flow section
+    const flowSection = document.querySelector('.process-flow');
+    if (flowSection) {
+      flowSection.addEventListener('mouseleave', function() {
+        flowNumbers.forEach(num => num.classList.remove('active'));
+        processSteps.forEach(step => step.classList.remove('highlight'));
+        if (flowNumbers[0]) {
+          flowNumbers[0].classList.add('active');
+        }
+      });
+    }
   </script>
 </body>
 
