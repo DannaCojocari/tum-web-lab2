@@ -22,7 +22,13 @@
           <li><a href="#about">Despre noi</a></li>
         </ul>
 
-        <a href="tel:+37376009015" class="nav-contact">Contactează-ne</a>
+        <a href="tel:+37376009015" class="nav-contact">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.21 6.21l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="nav-contact-text">
+            <span class="nav-contact-label">Contactează-ne</span>
+            <span class="nav-contact-number">+373 76 009 015</span>
+          </span>
+        </a>
       </nav>
     </div>
   </header>
@@ -30,13 +36,12 @@
   <section class="hero">
     <div class="hero-background">
       <img src="photos/background.png" />
-      <h1>
-        <span>A</span><span>P</span><span>A</span><span>R</span><span>T</span><span>A</span><span>M</span><span>E</span><span>N</span><span>T</span><span>
-        </span><span>R</span><span>E</span><span>N</span><span>O</span><span>V</span><span>A</span><span>T</span></h1>
+      <div class="hero-overlay"></div>
     </div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
+          <h2 class="hero-title">Transformă-ți casa cu ajutorul experților</h2>
           <p class="subheadline">
             Servicii experte de renovare care dau viață viziunii tale.
             De la bucătării la remodelări complete, ne ocupăm de fiecare detaliu cu grijă.
@@ -50,6 +55,61 @@
               Explorează proiectele noastre
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
             </a>
+          </div>
+        </div>
+        <div class="hero-form">
+          <div class="form-container">
+            <h3 class="form-title">Obține o consultație gratuită</h3>
+            <p class="form-subtitle">Completează formularul și te vom contacta în cel mai scurt timp</p>
+            <form class="consultation-form" action="#" method="POST">
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <input type="text" id="name" name="name" placeholder="Numele tău" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-wrapper" id="phone-wrapper">
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.21 6.21l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <input type="tel" id="phone" name="phone" placeholder="Telefon" inputmode="tel" pattern="[\+]?[0-9\s\-]{9,17}" required autocomplete="tel">
+                </div>
+                <span class="phone-error" id="phone-error">Introduceți doar cifre, spații sau +</span>
+              </div>
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  <select id="service" name="service" required>
+                    <option value="">Tipul de serviciu</option>
+                    <option value="renovation">Renovări generale</option>
+                    <option value="interior">Finisaje interioare</option>
+                    <option value="kitchen">Renovare bucătărie</option>
+                    <option value="bathroom">Renovare baie</option>
+                    <option value="other">Altele</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-wrapper input-wrapper--textarea">
+                  <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  <textarea id="message" name="message" placeholder="Mesaj (opțional)..." rows="3"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-form">
+                Trimite cererea
+                <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
+              </button>
+            </form>
+            <div class="form-confirmation" id="form-confirmation">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirmation-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h4>Cererea a fost trimisă!</h4>
+              <p>Vă vom contacta în cel mai scurt timp.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -66,67 +126,47 @@
       </div>
 
       <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-item">
-          <div class="service-image">
+        <div class="service-card" data-service="1">
+          <div class="service-card-image">
             <img src="photos/service1.png" alt="Renovări generale și structurale">
           </div>
-          <div class="service-content">
-            <div class="service-number">01</div>
-            <h3 class="service-title">Renovări generale și structurale</h3>
-            <p class="service-text">
-              Transformăm complet spațiile tale prin renovări structurale complexe, 
-              asigurând calitate și durabilitate pe termen lung.
-            </p>
-            <a href="#" class="service-link" data-service="1">Află mai multe →</a>
+          <div class="service-card-footer">
+            <span class="service-card-number">01</span>
+            <h3 class="service-card-title">Renovări generale și structurale</h3>
+            <span class="service-card-learn-more">Află mai multe →</span>
           </div>
         </div>
 
-        <!-- Service 2 -->
-        <div class="service-item service-item-reverse">
-          <div class="service-content">
-            <div class="service-number">02</div>
-            <h3 class="service-title">Finisaje interioare</h3>
-            <p class="service-text">
-              De la vopsitorie la gresie și faianță, oferim finisaje interioare 
-              impecabile care adaugă eleganță și stil locuinței tale.
-            </p>
-            <a href="#" class="service-link" data-service="2">Află mai multe →</a>
-          </div>
-          <div class="service-image">
+        <div class="service-card" data-service="2">
+          <div class="service-card-image">
             <img src="photos/service2.png" alt="Finisaje interioare">
           </div>
+          <div class="service-card-footer">
+            <span class="service-card-number">02</span>
+            <h3 class="service-card-title">Finisaje interioare</h3>
+            <span class="service-card-learn-more">Află mai multe →</span>
+          </div>
         </div>
 
-        <!-- Service 3 -->
-        <div class="service-item">
-          <div class="service-image">
+        <div class="service-card" data-service="3">
+          <div class="service-card-image">
             <img src="photos/service3.png" alt="Instalații electrice și sanitare">
           </div>
-          <div class="service-content">
-            <div class="service-number">03</div>
-            <h3 class="service-title">Instalații electrice și sanitare</h3>
-            <p class="service-text">
-              Instalații moderne și sigure, executate de specialiști autorizați 
-              pentru confortul și siguranța casei tale.
-            </p>
-            <a href="#" class="service-link" data-service="3">Află mai multe →</a>
+          <div class="service-card-footer">
+            <span class="service-card-number">03</span>
+            <h3 class="service-card-title">Instalații electrice și sanitare</h3>
+            <span class="service-card-learn-more">Află mai multe →</span>
           </div>
         </div>
 
-        <!-- Service 4 -->
-        <div class="service-item service-item-reverse">
-          <div class="service-content">
-            <div class="service-number">04</div>
-            <h3 class="service-title">Montaj pardoseli și tâmplărie</h3>
-            <p class="service-text">
-              Montăm diverse tipuri de pardoseli și tâmplărie personalizată 
-              pentru a finaliza perfect orice proiect de renovare.
-            </p>
-            <a href="#" class="service-link" data-service="4">Află mai multe →</a>
-          </div>
-          <div class="service-image">
+        <div class="service-card" data-service="4">
+          <div class="service-card-image">
             <img src="photos/service4.png" alt="Montaj pardoseli și tâmplărie">
+          </div>
+          <div class="service-card-footer">
+            <span class="service-card-number">04</span>
+            <h3 class="service-card-title">Montaj pardoseli și tâmplărie</h3>
+            <span class="service-card-learn-more">Află mai multe →</span>
           </div>
         </div>
       </div>
@@ -135,67 +175,72 @@
 
   <section class="process" id="process">
     <div class="container">
-      <div class="process-layout">
-        <!-- Left Side: Title, Description, and Image -->
-        <div class="process-left">
+
+      <!-- Top: title + description left, image right -->
+      <div class="process-top">
+        <div class="process-top-text">
           <h2 class="process-title">Procesul de renovare</h2>
           <p class="process-description">
-            Fiecare proiect este gestionat profesional, de la planificare până la finalizare, 
+            Fiecare proiect este gestionat profesional, de la planificare până la finalizare,
             pentru a asigura rezultate de calitate și satisfacția completă a clientului.
           </p>
-          <div class="process-image">
-            <img src="photos/process.png" alt="Procesul de renovare">
-          </div>
         </div>
-
-        <!-- Middle: Process Flow -->
-        <div class="process-flow">
-          <div class="flow-line"></div>
-          <div class="flow-step" data-step="1">
-            <div class="flow-number">1</div>
-          </div>
-          <div class="flow-step" data-step="2">
-            <div class="flow-number">2</div>
-          </div>
-          <div class="flow-step" data-step="3">
-            <div class="flow-number">3</div>
-          </div>
-          <div class="flow-step" data-step="4">
-            <div class="flow-number">4</div>
-          </div>
-        </div>
-
-        <!-- Right Side: Process Steps -->
-        <div class="process-right">
-          <div class="process-step">
-            <h3 class="step-title">Planificare și evaluare</h3>
-            <p class="step-text">
-              Se analizează spațiul, se stabilesc lucrările necesare, bugetul și materialele.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <h3 class="step-title">Pregătirea și lucrările de bază</h3>
-            <p class="step-text">
-              Se îndepărtează elementele vechi și se execută lucrările structurale și instalațiile necesare.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <h3 class="step-title">Finisaje și montaj</h3>
-            <p class="step-text">
-              Se realizează finisajele interioare și se montează pardoselile, ușile și elementele decorative.
-            </p>
-          </div>
-
-          <div class="process-step">
-            <h3 class="step-title">Verificare și finalizare</h3>
-            <p class="step-text">
-              Se montează echipamentele finale, se fac verificările și curățenia, iar spațiul devine gata de utilizare.
-            </p>
-          </div>
+        <div class="process-image">
+          <img src="photos/process.png" alt="Procesul de renovare">
         </div>
       </div>
+
+      <!-- Bottom: horizontal timeline -->
+      <div class="process-timeline">
+        <div class="timeline-track">
+
+          <div class="timeline-step">
+            <div class="timeline-stem">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-number">1 pas</span>
+              <h3 class="timeline-title">Planificare și evaluare</h3>
+              <p class="timeline-text">Se analizează spațiul, se stabilesc lucrările necesare, bugetul și materialele.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-stem">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-number">2 pas</span>
+              <h3 class="timeline-title">Pregătirea și lucrările de bază</h3>
+              <p class="timeline-text">Se îndepărtează elementele vechi și se execută lucrările structurale și instalațiile necesare.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-stem">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-number">3 pas</span>
+              <h3 class="timeline-title">Finisaje și montaj</h3>
+              <p class="timeline-text">Se realizează finisajele interioare și se montează pardoselile, ușile și elementele decorative.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-stem">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-number">4 pas</span>
+              <h3 class="timeline-title">Verificare și finalizare</h3>
+              <p class="timeline-text">Se montează echipamentele finale, se fac verificările și curățenia, iar spațiul devine gata de utilizare.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -354,6 +399,83 @@
   </div>
 
   <script>
+    // Phone field validation
+    (function () {
+      const phoneInput = document.getElementById('phone');
+      const phoneError = document.getElementById('phone-error');
+      const phoneWrapper = document.getElementById('phone-wrapper');
+
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function () {
+          // Strip any character that is not digit, +, space or dash
+          const cleaned = this.value.replace(/[^\d\+\s\-]/g, '');
+          if (this.value !== cleaned) {
+            this.value = cleaned;
+          }
+
+          // Validate: must contain at least 9 digits
+          const digits = cleaned.replace(/\D/g, '');
+          if (cleaned.length > 0 && digits.length < 9) {
+            phoneWrapper.classList.add('input-error');
+            phoneError.classList.add('visible');
+            phoneError.textContent = 'Numărul trebuie să conțină cel puțin 9 cifre.';
+          } else if (cleaned.length > 0 && digits.length > 15) {
+            phoneWrapper.classList.add('input-error');
+            phoneError.classList.add('visible');
+            phoneError.textContent = 'Numărul este prea lung (max 15 cifre).';
+          } else {
+            phoneWrapper.classList.remove('input-error');
+            phoneError.classList.remove('visible');
+          }
+        });
+
+        phoneInput.addEventListener('blur', function () {
+          if (this.value.trim() === '') {
+            phoneWrapper.classList.remove('input-error');
+            phoneError.classList.remove('visible');
+          }
+        });
+      }
+    })();
+
+    // Consultation form submit
+    (function () {
+      const form = document.querySelector('.consultation-form');
+      const confirmation = document.getElementById('form-confirmation');
+
+      if (form && confirmation) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Extra phone guard
+          const phoneInput = document.getElementById('phone');
+          const phoneWrapper = document.getElementById('phone-wrapper');
+          const phoneError = document.getElementById('phone-error');
+          const digits = phoneInput.value.replace(/\D/g, '');
+          if (digits.length < 9) {
+            phoneWrapper.classList.add('input-error');
+            phoneError.classList.add('visible');
+            phoneError.textContent = 'Numărul trebuie să conțină cel puțin 9 cifre.';
+            phoneInput.focus();
+            return;
+          }
+
+          // Show confirmation, hide form
+          form.style.display = 'none';
+          confirmation.classList.add('visible');
+
+          // Reset after 4 seconds
+          setTimeout(function () {
+            form.reset();
+            form.style.display = '';
+            confirmation.classList.remove('visible');
+            phoneWrapper.classList.remove('input-error');
+            phoneError.classList.remove('visible');
+          }, 4000);
+        });
+      }
+    })();
+
     // Service details data
     const serviceDetails = {
       1: {
@@ -467,10 +589,9 @@
       document.body.style.overflow = 'auto';
     }
 
-    // Add click events to service links
-    document.querySelectorAll('.service-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
+    // Add click events to service cards
+    document.querySelectorAll('.service-card[data-service]').forEach(card => {
+      card.addEventListener('click', function() {
         const serviceId = this.getAttribute('data-service');
         openModal(serviceId);
       });
@@ -492,73 +613,6 @@
         closeModal();
       }
     });
-
-    // Process section interactivity
-    const processSteps = document.querySelectorAll('.process-step');
-    const flowNumbers = document.querySelectorAll('.flow-number');
-    
-    // Set first step as active by default
-    if (flowNumbers.length > 0) {
-      flowNumbers[0].classList.add('active');
-    }
-    
-    // Hover on process text steps
-    processSteps.forEach((step, index) => {
-      step.addEventListener('mouseenter', function() {
-        // Remove active class from all
-        flowNumbers.forEach(num => num.classList.remove('active'));
-        processSteps.forEach(s => s.classList.remove('highlight'));
-        
-        // Add active class to corresponding number
-        if (flowNumbers[index]) {
-          flowNumbers[index].classList.add('active');
-        }
-        
-        // Add highlight to this step
-        step.classList.add('highlight');
-      });
-    });
-    
-    // Hover on flow numbers
-    flowNumbers.forEach((flowNumber, index) => {
-      flowNumber.addEventListener('mouseenter', function() {
-        // Remove active class from all
-        flowNumbers.forEach(num => num.classList.remove('active'));
-        processSteps.forEach(step => step.classList.remove('highlight'));
-        
-        // Add active class to this number
-        flowNumber.classList.add('active');
-        
-        // Add highlight to corresponding text
-        if (processSteps[index]) {
-          processSteps[index].classList.add('highlight');
-        }
-      });
-    });
-    
-    // Reset to first on mouse leave from process section
-    const processSection = document.querySelector('.process-right');
-    if (processSection) {
-      processSection.addEventListener('mouseleave', function() {
-        flowNumbers.forEach(num => num.classList.remove('active'));
-        processSteps.forEach(step => step.classList.remove('highlight'));
-        if (flowNumbers[0]) {
-          flowNumbers[0].classList.add('active');
-        }
-      });
-    }
-    
-    // Reset to first on mouse leave from flow section
-    const flowSection = document.querySelector('.process-flow');
-    if (flowSection) {
-      flowSection.addEventListener('mouseleave', function() {
-        flowNumbers.forEach(num => num.classList.remove('active'));
-        processSteps.forEach(step => step.classList.remove('highlight'));
-        if (flowNumbers[0]) {
-          flowNumbers[0].classList.add('active');
-        }
-      });
-    }
 
     // Portfolio lightbox functionality
     const lightbox = document.getElementById('lightbox');
