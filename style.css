@@ -2064,3 +2064,197 @@ a {
   }
 }
 
+/* ========================================
+   MASCOT
+   ======================================== */
+
+.mascot {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 800;
+  cursor: pointer;
+  opacity: 0;
+  /* Walk in after 3s, then idle bounce forever */
+  animation:
+    mascot-enter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 3s forwards,
+    mascot-idle  2.4s ease-in-out 3.9s infinite;
+  user-select: none;
+}
+
+/* --- Entrance: walks/bounces in from right edge --- */
+@keyframes mascot-enter {
+  0%   { opacity: 0; transform: translateX(80px) translateY(20px) rotate(8deg); }
+  40%  { opacity: 1; transform: translateX(-10px) translateY(-6px) rotate(-4deg); }
+  65%  { transform: translateX(5px) translateY(0) rotate(2deg); }
+  100% { opacity: 1; transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+/* --- Idle: gentle jump + tilt (simulates walking in place) --- */
+@keyframes mascot-idle {
+  0%   { transform: translateY(0)     rotate(-3deg) scale(1);    }
+  20%  { transform: translateY(-12px) rotate(2deg)  scale(1.03); }
+  40%  { transform: translateY(-3px)  rotate(-2deg) scale(1);    }
+  60%  { transform: translateY(-9px)  rotate(3deg)  scale(1.02); }
+  80%  { transform: translateY(-2px)  rotate(-1deg) scale(1);    }
+  100% { transform: translateY(0)     rotate(-3deg) scale(1);    }
+}
+
+/* --- Hover: excited wiggle overrides idle --- */
+.mascot:hover {
+  animation:
+    mascot-enter 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 3s forwards,
+    mascot-excited 0.45s ease-in-out 3.9s infinite alternate;
+}
+
+@keyframes mascot-excited {
+  0%   { transform: rotate(-7deg) scale(1.07) translateY(-4px); }
+  100% { transform: rotate(7deg)  scale(1.07) translateY(-4px); }
+}
+
+/* Bridge gap between mascot image and speech bubble so hover doesn't break */
+.mascot::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+/* --- Close button --- */
+.mascot-close {
+  opacity: 0;
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.4s ease;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #9b6250;
+  color: #faf5ee;
+  border: 2px solid #faf5ee;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(74, 55, 40, 0.35);
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.mascot-close.visible {
+  opacity: 1;
+}
+
+.mascot-close:hover {
+  background: #4a3728;
+  transform: scale(1.15);
+}
+
+/* --- Mascot figure --- */
+.mascot-figure {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.mascot-img {
+  width: 15vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(74, 55, 40, 0.25));
+}
+
+/* --- Speech bubble --- */
+.mascot-bubble {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  right: 0;
+  width: 230px;
+  background: #faf5ee;
+  border: 2px solid #d4bfa8;
+  border-radius: 18px 18px 4px 18px;
+  padding: 16px 18px 14px;
+  box-shadow: 0 8px 28px rgba(74, 55, 40, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(0.92);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.mascot:hover .mascot-bubble {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.mascot-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #d4bfa8 transparent transparent;
+}
+
+.mascot-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  right: 21px;
+  border-width: 9px 9px 0;
+  border-style: solid;
+  border-color: #faf5ee transparent transparent;
+  z-index: 1;
+}
+
+.mascot-bubble-greeting {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4a3728;
+  margin-bottom: 6px;
+}
+
+.mascot-bubble-text {
+  font-size: 0.82rem;
+  color: #6b4c38;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.mascot-bubble-cta {
+  display: inline-block;
+  background: #6b4c38;
+  color: #faf5ee;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.mascot-bubble-cta:hover {
+  background: #5a3e2b;
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 768px) {
+  .mascot {
+    bottom: 90px; /* above sticky CTA bar */
+    right: 6px;
+  }
+
+  .mascot-img {
+    width: 30vw;
+  }
+
+  .mascot-bubble {
+    width: 190px;
+    right: 0;
+  }
+}

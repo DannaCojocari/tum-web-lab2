@@ -43,7 +43,7 @@
 
   <section class="hero">
     <div class="hero-background">
-      <img src="photos/background.png" />
+      <img src="photos/background.png" alt="Casa Nouă - renovări profesionale" />
       <div class="hero-overlay"></div>
     </div>
     <div class="container">
@@ -321,7 +321,7 @@
     </div>
   </section>
 
-    <section class="about" id="about">
+  <section class="about" id="about">
     <div class="container">
       <!-- Header: title + subtitle left-aligned -->
       <div class="about-header">
@@ -726,8 +726,43 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.21 6.21l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Sună acum
     </a>
-    <a href="#services" class="sticky-services">Servicii noastre</a>
+    <a href="#services" class="sticky-services">Serviciile noastre</a>
   </div>
+
+  <!-- Mascot — appears after 3s delay in bottom-right corner -->
+  <div class="mascot" id="mascot" aria-label="Mascota Casa Nouă">
+    <!-- Speech bubble -->
+    <div class="mascot-bubble" role="tooltip">
+      <p class="mascot-bubble-greeting">Mă bucur să vă văd aici!</p>
+      <p class="mascot-bubble-text">Pentru mai multe detalii, nu ezitați să ne apelați:</p>
+      <a href="tel:+37376009015" class="mascot-bubble-cta">+373 76 009 015</a>
+    </div>
+
+    <!-- Character figure -->
+    <div class="mascot-figure">
+      <img class="mascot-img" src="photos/mascot.png" alt="Mascota Casa Nouă">
+    </div>
+
+    <!-- Close button -->
+    <button class="mascot-close" id="mascot-close" aria-label="Închide mascota" title="Închide">&times;</button>
+  </div>
+
+  <script>
+    // Show close button after 10s
+    setTimeout(function () {
+      var btn = document.getElementById('mascot-close');
+      if (btn) btn.classList.add('visible');
+    }, 10000);
+
+    document.getElementById('mascot-close').addEventListener('click', function (e) {
+      e.stopPropagation();
+      var mascot = document.getElementById('mascot');
+      mascot.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+      mascot.style.opacity = '0';
+      mascot.style.transform = 'translateX(60px)';
+      setTimeout(function () { mascot.style.visibility = 'hidden'; }, 350);
+    });
+  </script>
 
   <footer class="footer">
     <div class="container">
