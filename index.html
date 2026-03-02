@@ -5,14 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Nouă</title>
+  <script>tailwind.config = { corePlugins: { preflight: false, container: false } }</script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header class="nav-header">
-    <div class="container">
-      <nav class="navbar">
+    <div class="container max-w-[90%] mx-auto px-5">
+      <nav class="navbar flex items-center justify-between">
         <h2 class="brand-name">Casa Nouă</h2>
 
         <ul class="nav-menu" id="nav-menu">
@@ -46,7 +48,7 @@
       <img src="photos/background.png" alt="Casa Nouă - renovări profesionale" />
       <div class="hero-overlay"></div>
     </div>
-    <div class="container">
+    <div class="container max-w-[90%] mx-auto px-5">
       <div class="hero-content">
         <div class="hero-text">
           <h2 class="hero-title">Transformă-ți casa cu ajutorul experților</h2>
@@ -54,7 +56,7 @@
             Servicii experte de renovare care dau viață viziunii tale.
             De la bucătării la remodelări complete, ne ocupăm de fiecare detaliu cu grijă.
           </p>
-          <div class="cta-group">
+          <div class="cta-group flex gap-4 mt-3 flex-wrap">
             <a href="tel:+37376009015" class="btn btn-primary">
               Ia legătura cu noi
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
@@ -65,7 +67,7 @@
             </a>
           </div>
         </div>
-        <div class="hero-form">
+        <div class="hero-form flex justify-end items-start">
           <div class="form-container">
             <h3 class="form-title">Obține o consultație gratuită</h3>
             <p class="form-subtitle">Completează formularul și te vom contacta în cel mai scurt timp</p>
@@ -126,9 +128,9 @@
 
   <!-- Mobile-only stats banner (hidden on desktop) -->
   <section class="mobile-hero-banner mobile-only">
-    <div class="container">
+    <div class="container max-w-[90%] mx-auto px-5">
       <p class="mobile-banner-tagline">Partenerul tău de încredere în renovări</p>
-      <div class="mobile-banner-stats">
+        <div class="mobile-banner-stats flex justify-center mb-6">
         <div class="mobile-stat"><strong>500+</strong><span>Proiecte finalizate</span></div>
         <div class="mobile-stat"><strong>10+</strong><span>Ani experiență</span></div>
         <div class="mobile-stat"><strong>100%</strong><span>Satisfacție garantată</span></div>
@@ -137,125 +139,125 @@
     </div>
   </section>
 
-  <section class="services" id="services">
-    <div class="container">
-      <div class="services-header">
-        <h2 class="services-title">Serviciile noastre</h2>
-        <p class="services-description">
+  <section class="services py-[100px] px-5 scroll-mt-[100px]" id="services">
+    <div class="container max-w-[90%] mx-auto px-5">
+      <div class="services-header text-center max-w-[800px] mx-auto mb-20">
+        <h2 class="services-title text-[3rem] font-bold text-[#4a3728] mb-5 tracking-[-0.02em]">Serviciile noastre</h2>
+        <p class="services-description text-xl text-[#8b6b55] leading-[1.6]">
           Noi oferim servicii complete de renovare și construcție pentru a transforma spațiul tău în visul pe care ți-l dorești.
         </p>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card" data-service="1">
-          <div class="service-card-image">
-            <img src="photos/service1.png" alt="Renovări generale și structurale">
+      <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <div class="service-card flex flex-col rounded-[10px] overflow-hidden cursor-pointer bg-[#faf5ee]" data-service="1">
+          <div class="service-card-image w-full h-[40vh] overflow-hidden shrink-0">
+            <img src="photos/service1.png" alt="Renovări generale și structurale" class="w-full h-full object-cover transition-transform duration-[400ms]">
           </div>
-          <div class="service-card-footer">
-            <span class="service-card-number">01</span>
-            <h3 class="service-card-title">Renovări generale și structurale</h3>
-            <span class="service-card-learn-more">Află mai multe →</span>
-          </div>
-        </div>
-
-        <div class="service-card" data-service="2">
-          <div class="service-card-image">
-            <img src="photos/service2.png" alt="Finisaje interioare">
-          </div>
-          <div class="service-card-footer">
-            <span class="service-card-number">02</span>
-            <h3 class="service-card-title">Finisaje interioare</h3>
-            <span class="service-card-learn-more">Află mai multe →</span>
+          <div class="service-card-footer pt-4 px-[18px] pb-[18px] flex flex-col gap-[6px] bg-[#faf5ee] border-t-2 border-[#e8d5c0]">
+            <span class="service-card-number text-xs font-bold text-[#9b6250] tracking-[0.1em] uppercase">01</span>
+            <h3 class="service-card-title text-base font-bold text-[#4a3728] leading-[1.3] m-0">Renovări generale și structurale</h3>
+            <span class="service-card-learn-more inline-block text-[0.82rem] font-semibold text-[#9b6250] tracking-[0.03em] mt-[6px]">Află mai multe →</span>
           </div>
         </div>
 
-        <div class="service-card" data-service="3">
-          <div class="service-card-image">
-            <img src="photos/service3.png" alt="Instalații electrice și sanitare">
+        <div class="service-card flex flex-col rounded-[10px] overflow-hidden cursor-pointer bg-[#faf5ee]" data-service="2">
+          <div class="service-card-image w-full h-[40vh] overflow-hidden shrink-0">
+            <img src="photos/service2.png" alt="Finisaje interioare" class="w-full h-full object-cover transition-transform duration-[400ms]">
           </div>
-          <div class="service-card-footer">
-            <span class="service-card-number">03</span>
-            <h3 class="service-card-title">Instalații electrice și sanitare</h3>
-            <span class="service-card-learn-more">Află mai multe →</span>
+          <div class="service-card-footer pt-4 px-[18px] pb-[18px] flex flex-col gap-[6px] bg-[#faf5ee] border-t-2 border-[#e8d5c0]">
+            <span class="service-card-number text-xs font-bold text-[#9b6250] tracking-[0.1em] uppercase">02</span>
+            <h3 class="service-card-title text-base font-bold text-[#4a3728] leading-[1.3] m-0">Finisaje interioare</h3>
+            <span class="service-card-learn-more inline-block text-[0.82rem] font-semibold text-[#9b6250] tracking-[0.03em] mt-[6px]">Află mai multe →</span>
           </div>
         </div>
 
-        <div class="service-card" data-service="4">
-          <div class="service-card-image">
-            <img src="photos/service4.png" alt="Montaj pardoseli și tâmplărie">
+        <div class="service-card flex flex-col rounded-[10px] overflow-hidden cursor-pointer bg-[#faf5ee]" data-service="3">
+          <div class="service-card-image w-full h-[40vh] overflow-hidden shrink-0">
+            <img src="photos/service3.png" alt="Instalații electrice și sanitare" class="w-full h-full object-cover transition-transform duration-[400ms]">
           </div>
-          <div class="service-card-footer">
-            <span class="service-card-number">04</span>
-            <h3 class="service-card-title">Montaj pardoseli și tâmplărie</h3>
-            <span class="service-card-learn-more">Află mai multe →</span>
+          <div class="service-card-footer pt-4 px-[18px] pb-[18px] flex flex-col gap-[6px] bg-[#faf5ee] border-t-2 border-[#e8d5c0]">
+            <span class="service-card-number text-xs font-bold text-[#9b6250] tracking-[0.1em] uppercase">03</span>
+            <h3 class="service-card-title text-base font-bold text-[#4a3728] leading-[1.3] m-0">Instalații electrice și sanitare</h3>
+            <span class="service-card-learn-more inline-block text-[0.82rem] font-semibold text-[#9b6250] tracking-[0.03em] mt-[6px]">Află mai multe →</span>
+          </div>
+        </div>
+
+        <div class="service-card flex flex-col rounded-[10px] overflow-hidden cursor-pointer bg-[#faf5ee]" data-service="4">
+          <div class="service-card-image w-full h-[40vh] overflow-hidden shrink-0">
+            <img src="photos/service4.png" alt="Montaj pardoseli și tâmplărie" class="w-full h-full object-cover transition-transform duration-[400ms]">
+          </div>
+          <div class="service-card-footer pt-4 px-[18px] pb-[18px] flex flex-col gap-[6px] bg-[#faf5ee] border-t-2 border-[#e8d5c0]">
+            <span class="service-card-number text-xs font-bold text-[#9b6250] tracking-[0.1em] uppercase">04</span>
+            <h3 class="service-card-title text-base font-bold text-[#4a3728] leading-[1.3] m-0">Montaj pardoseli și tâmplărie</h3>
+            <span class="service-card-learn-more inline-block text-[0.82rem] font-semibold text-[#9b6250] tracking-[0.03em] mt-[6px]">Află mai multe →</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="process" id="process">
-    <div class="container">
+  <section class="process py-[5vw] px-[4vw] md:py-[3vh] md:px-[1.5vw] bg-[#f0e6d8] m-[2%] md:m-[1%] rounded-[20px] scroll-mt-[76px] md:scroll-mt-[100px]" id="process">
+    <div class="container max-w-[90%] mx-auto px-5">
 
       <!-- Top: title + description left, image right -->
-      <div class="process-top">
-        <div class="process-top-text">
-          <h2 class="process-title">Procesul de renovare</h2>
-          <p class="process-description">
+      <div class="process-top grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-stretch mb-7 md:mb-10">
+        <div class="process-top-text flex flex-col justify-center pr-3">
+            <h2 class="process-title text-[1.2rem] md:text-[2.5rem] font-bold text-[#4a3728] mb-[10px] tracking-[-0.02em] leading-[1.2]">Procesul de renovare</h2>
+          <p class="process-description text-[0.8rem] md:text-[1.2rem] text-[#5a4a3a] leading-[1.5]">
             Fiecare proiect este gestionat profesional, de la planificare până la finalizare,
             pentru a asigura rezultate de calitate și satisfacția completă a clientului.
           </p>
         </div>
-        <div class="process-image">
-          <img src="photos/process.png" alt="Procesul de renovare">
+        <div class="process-image w-full h-[200px] md:h-[30vh] rounded-xl md:rounded-2xl overflow-hidden">
+            <img src="photos/process.png" alt="Procesul de renovare" class="w-full h-full object-cover">
         </div>
       </div>
 
       <!-- Bottom: horizontal timeline -->
-      <div class="process-timeline">
-        <div class="timeline-track">
+      <div class="process-timeline px-5 pb-5">
+<div class="timeline-track grid grid-cols-1 md:grid-cols-4 items-stretch relative gap-4 md:gap-0">
 
-          <div class="timeline-step">
-            <div class="timeline-stem">
+          <div class="timeline-step flex flex-col items-center relative h-full">
+            <div class="timeline-stem hidden md:block">
               <div class="timeline-dot"></div>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-number">1 pas</span>
-              <h3 class="timeline-title">Planificare și evaluare</h3>
-              <p class="timeline-text">Se analizează spațiul, se stabilesc lucrările necesare, bugetul și materialele.</p>
+            <div class="timeline-card mt-0 md:mt-6 bg-[#e1c4afc3] border-2 border-[#c4916e] rounded-[14px] p-4 md:py-5 md:px-[18px] w-full md:w-[90%] flex-1">
+              <span class="timeline-number inline-block text-xs font-bold text-[#faf5ee] uppercase tracking-[0.08em] bg-[#7a4e38] py-[3px] px-[10px] rounded-[20px] mb-[10px]">1 pas</span>
+              <h3 class="timeline-title text-[0.95rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-2 tracking-[-0.01em] leading-[1.3]">Planificare și evaluare</h3>
+              <p class="timeline-text text-[0.85rem] md:text-[1.1rem] text-[#5a4a3a] leading-[1.6]">Se analizează spațiul, se stabilesc lucrările necesare, bugetul și materialele.</p>
             </div>
           </div>
 
-          <div class="timeline-step">
-            <div class="timeline-stem">
+          <div class="timeline-step flex flex-col items-center relative h-full">
+            <div class="timeline-stem hidden md:block">
               <div class="timeline-dot"></div>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-number">2 pas</span>
-              <h3 class="timeline-title">Pregătirea și lucrările de bază</h3>
-              <p class="timeline-text">Se îndepărtează elementele vechi și se execută lucrările structurale și instalațiile necesare.</p>
+            <div class="timeline-card mt-0 md:mt-6 bg-[#e1c4afc3] border-2 border-[#c4916e] rounded-[14px] p-4 md:py-5 md:px-[18px] w-full md:w-[90%] flex-1">
+              <span class="timeline-number inline-block text-xs font-bold text-[#faf5ee] uppercase tracking-[0.08em] bg-[#7a4e38] py-[3px] px-[10px] rounded-[20px] mb-[10px]">2 pas</span>
+              <h3 class="timeline-title text-[0.95rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-2 tracking-[-0.01em] leading-[1.3]">Pregătirea și lucrările de bază</h3>
+              <p class="timeline-text text-[0.85rem] md:text-[1.1rem] text-[#5a4a3a] leading-[1.6]">Se îndepărtează elementele vechi și se execută lucrările structurale și instalațiile necesare.</p>
             </div>
           </div>
 
-          <div class="timeline-step">
-            <div class="timeline-stem">
+          <div class="timeline-step flex flex-col items-center relative h-full">
+            <div class="timeline-stem hidden md:block">
               <div class="timeline-dot"></div>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-number">3 pas</span>
-              <h3 class="timeline-title">Finisaje și montaj</h3>
-              <p class="timeline-text">Se realizează finisajele interioare și se montează pardoselile, ușile și elementele decorative.</p>
+            <div class="timeline-card mt-0 md:mt-6 bg-[#e1c4afc3] border-2 border-[#c4916e] rounded-[14px] p-4 md:py-5 md:px-[18px] w-full md:w-[90%] flex-1">
+              <span class="timeline-number inline-block text-xs font-bold text-[#faf5ee] uppercase tracking-[0.08em] bg-[#7a4e38] py-[3px] px-[10px] rounded-[20px] mb-[10px]">3 pas</span>
+              <h3 class="timeline-title text-[0.95rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-2 tracking-[-0.01em] leading-[1.3]">Finisaje și montaj</h3>
+              <p class="timeline-text text-[0.85rem] md:text-[1.1rem] text-[#5a4a3a] leading-[1.6]">Se realizează finisajele interioare și se montează pardoselile, ușile și elementele decorative.</p>
             </div>
           </div>
 
-          <div class="timeline-step">
-            <div class="timeline-stem">
+          <div class="timeline-step flex flex-col items-center relative h-full">
+            <div class="timeline-stem hidden md:block">
               <div class="timeline-dot"></div>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-number">4 pas</span>
-              <h3 class="timeline-title">Verificare și finalizare</h3>
-              <p class="timeline-text">Se montează echipamentele finale, se fac verificările și curățenia, iar spațiul devine gata de utilizare.</p>
+            <div class="timeline-card mt-0 md:mt-6 bg-[#e1c4afc3] border-2 border-[#c4916e] rounded-[14px] p-4 md:py-5 md:px-[18px] w-full md:w-[90%] flex-1">
+              <span class="timeline-number inline-block text-xs font-bold text-[#faf5ee] uppercase tracking-[0.08em] bg-[#7a4e38] py-[3px] px-[10px] rounded-[20px] mb-[10px]">4 pas</span>
+              <h3 class="timeline-title text-[0.95rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-2 tracking-[-0.01em] leading-[1.3]">Verificare și finalizare</h3>
+              <p class="timeline-text text-[0.85rem] md:text-[1.1rem] text-[#5a4a3a] leading-[1.6]">Se montează echipamentele finale, se fac verificările și curățenia, iar spațiul devine gata de utilizare.</p>
             </div>
           </div>
 
@@ -266,8 +268,8 @@
   </section>
 
   <section class="portfolio" id="portfolio">
-    <div class="container">
-      <div class="portfolio-header">
+    <div class="container max-w-[90%] mx-auto px-5">
+      <div class="portfolio-header text-center max-w-[800px] mx-auto mb-[60px]">
         <h2 class="portfolio-title">Lucrările noastre</h2>
         <p class="portfolio-description">
           Explorează o selecție din proiectele noastre finalizate și descoperă 
@@ -322,9 +324,9 @@
   </section>
 
   <section class="about" id="about">
-    <div class="container">
+    <div class="container max-w-[90%] mx-auto px-5">
       <!-- Header: title + subtitle left-aligned -->
-      <div class="about-header">
+      <div class="about-header text-left mb-12">
         <h2 class="about-title">Despre noi</h2>
         <p class="about-intro">
           Cu peste 10 ani de experiență în domeniul renovărilor și construcțiilor, 
@@ -333,22 +335,22 @@
         </p>
       </div>
 
-      <div class="about-layout">
+      <div class="about-layout grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[60px] items-start mx-auto">
         <!-- Left Side: Image -->
-        <div class="about-left">
+        <div class="about-left md:pr-5">
           <div class="about-image">
             <img src="photos/team.png" alt="Echipa Casa Nouă">
           </div>
         </div>
 
         <!-- Right Side: Features + CTA -->
-        <div class="about-right">
-          <div class="about-features">
-            <div class="about-feature">
+        <div class="about-right md:pl-5">
+          <div class="about-features flex flex-col gap-[30px] mb-10">
+            <div class="about-feature flex gap-5 items-start">
               <div class="feature-icon">
                 <span>✓</span>
               </div>
-              <div class="feature-content">
+              <div class="feature-content flex-1">
                 <h3 class="feature-title">Experiență și profesionalism</h3>
                 <p class="feature-text">
                   Echipa noastră de specialiști autorizați aduce expertiză în fiecare proiect, 
@@ -357,11 +359,11 @@
               </div>
             </div>
 
-            <div class="about-feature">
+            <div class="about-feature flex gap-5 items-start">
               <div class="feature-icon">
                 <span>✓</span>
               </div>
-              <div class="feature-content">
+              <div class="feature-content flex-1">
                 <h3 class="feature-title">Calitate garantată</h3>
                 <p class="feature-text">
                   Folosim doar materiale de calitate superioară și oferim garanție pentru toate lucrările executate, 
@@ -370,11 +372,11 @@
               </div>
             </div>
 
-            <div class="about-feature">
+            <div class="about-feature flex gap-5 items-start">
               <div class="feature-icon">
                 <span>✓</span>
               </div>
-              <div class="feature-content">
+              <div class="feature-content flex-1">
                 <h3 class="feature-title">Transparență totală</h3>
                 <p class="feature-text">
                   Comunicăm deschis pe tot parcursul proiectului, oferind rapoarte detaliate 
@@ -383,11 +385,11 @@
               </div>
             </div>
 
-            <div class="about-feature">
+            <div class="about-feature flex gap-5 items-start">
               <div class="feature-icon">
                 <span>✓</span>
               </div>
-              <div class="feature-content">
+              <div class="feature-content flex-1">
                 <h3 class="feature-title">Satisfacția clientului</h3>
                 <p class="feature-text">
                   Peste 500 de proiecte finalizate cu succes și clienți mulțumiți care ne recomandă cu încredere. 
@@ -397,7 +399,7 @@
             </div>
           </div>
 
-          <div class="about-cta">
+          <div class="about-cta mt-5">
             <a href="tel:+37376009015" class="btn btn-primary">
               Contactează-ne acum
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
@@ -409,9 +411,9 @@
   </section>
 
   <!-- Modal Structure -->
-  <div id="serviceModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
+  <div id="serviceModal" class="modal fixed inset-0 z-[2000] bg-black/70 backdrop-blur-[5px]">
+    <div class="modal-content bg-[#faf5ee] fixed bottom-0 left-0 right-0 md:relative md:bottom-auto md:left-auto md:right-auto md:mx-auto md:my-[5%] p-6 md:py-10 md:px-[50px] rounded-t-[20px] md:rounded-[20px] max-w-full md:max-w-[70vw] max-h-[88vh] md:max-h-[80vh] overflow-y-auto shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+      <span class="modal-close absolute top-5 right-6 text-[35px] font-light text-[#a08060] cursor-pointer leading-none transition-colors duration-300">&times;</span>
       <div id="modalBody"></div>
     </div>
   </div>
@@ -578,28 +580,28 @@
     function openModal(serviceId) {
       const service = serviceDetails[serviceId];
       
-      let tasksHTML = service.tasks.map(task => `<li>— ${task}</li>`).join('');
-      let benefitsHTML = service.benefits.map(benefit => `<li>— ${benefit}</li>`).join('');
+      let tasksHTML = service.tasks.map(task => `<li class="text-[0.9rem] md:text-[1.05rem] text-[#5a3e2b] leading-[1.8] py-2 pl-[10px]">— ${task}</li>`).join('');
+      let benefitsHTML = service.benefits.map(benefit => `<li class="text-[0.9rem] md:text-[1.05rem] text-[#5a3e2b] leading-[1.8] py-2 pl-[10px]">— ${benefit}</li>`).join('');
       
       modalBody.innerHTML = `
-        <h2 class="modal-title">${service.title}</h2>
-        <p class="modal-subtitle">${service.subtitle}</p>
-        <p class="modal-description">${service.description}</p>
+        <h2 class="modal-title text-[1.3rem] md:text-[2rem] font-bold text-[#4a3728] mb-[10px] tracking-[-0.02em] pr-8 md:pr-0">${service.title}</h2>
+        <p class="modal-subtitle text-[1rem] md:text-[1.25rem] text-[#8b6b55] italic mb-5 font-medium">${service.subtitle}</p>
+        <p class="modal-description text-[0.95rem] md:text-[1.1rem] text-[#5a3e2b] leading-[1.7] mb-[30px]">${service.description}</p>
         
-        <div class="modal-sections">
-          <div class="modal-section">
-            <h3 class="modal-section-title">Ce realizăm</h3>
-            <ul class="modal-list">${tasksHTML}</ul>
+        <div class="modal-sections flex flex-col md:flex-row gap-5 md:gap-[30px] mt-5">
+          <div class="modal-section flex-1">
+            <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-[15px]">Ce realizăm</h3>
+            <ul class="modal-list list-none p-0 mb-5">${tasksHTML}</ul>
           </div>
           
-          <div class="modal-section">
-            <h3 class="modal-section-title">Beneficii</h3>
-            <ul class="modal-list">${benefitsHTML}</ul>
+          <div class="modal-section flex-1">
+            <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-[15px]">Beneficii</h3>
+            <ul class="modal-list list-none p-0 mb-5">${benefitsHTML}</ul>
           </div>
         </div>
         
-        <div class="modal-cta">
-          <a href="tel:+37376009015" class="modal-btn">Fă o programare</a>
+        <div class="modal-cta mt-10 text-center pt-[30px] border-t border-[#d4bfa8]">
+          <a href="tel:+37376009015" class="modal-btn inline-block bg-[#6b4c38] text-[#faf5ee] py-3 md:py-4 px-6 md:px-10 text-[0.95rem] md:text-[1.1rem] font-semibold rounded-lg no-underline">Fă o programare</a>
         </div>
       `;
       
@@ -757,15 +759,16 @@
     document.getElementById('mascot-close').addEventListener('click', function (e) {
       e.stopPropagation();
       var mascot = document.getElementById('mascot');
+      this.style.display = 'none';
       mascot.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
       mascot.style.opacity = '0';
       mascot.style.transform = 'translateX(60px)';
-      setTimeout(function () { mascot.style.visibility = 'hidden'; }, 350);
+      setTimeout(function () { mascot.style.display = 'none'; }, 350);
     });
   </script>
 
   <footer class="footer">
-    <div class="container">
+    <div class="container max-w-[90%] mx-auto px-5">
       <div class="footer-content">
         <!-- Company Info -->
         <div class="footer-section">
@@ -818,7 +821,7 @@
         </div>
       </div>
 
-      <div class="footer-bottom">
+      <div class="footer-bottom border-t border-[#7a5c45] pt-[15px] text-center">
         <p>&copy; 2026 Casa Nouă. Toate drepturile rezervate.</p>
       </div>
     </div>
