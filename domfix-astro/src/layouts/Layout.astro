@@ -21,6 +21,11 @@ import '../styles/global.css';
           }
         });
       }
+
+      // Handle invite/recovery tokens
+      if (window.location.hash && window.location.hash.includes('recovery_token')) {
+        window.netlifyIdentity && window.netlifyIdentity.open();
+      }
     </script>
     <slot />
   </body>
