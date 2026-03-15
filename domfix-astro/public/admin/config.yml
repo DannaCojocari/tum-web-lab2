@@ -16,7 +16,7 @@ collections:
 
       - name: hero
         label: Secțiunea Hero
-        file: src/content/settings/hero.json
+        file: domfix-astro/src/content/settings/hero.json
         fields:
           - { label: Titlu principal,                        name: title,              widget: string }
           - { label: Subtitlu,                               name: subtitle,           widget: text   }
@@ -27,7 +27,7 @@ collections:
 
       - name: about
         label: Secțiunea Despre noi
-        file: src/content/settings/about.json
+        file: domfix-astro/src/content/settings/about.json
         fields:
           - { label: Titlu,                name: title, widget: string }
           - { label: Paragraf introductiv, name: intro, widget: text   }
@@ -40,7 +40,7 @@ collections:
 
       - name: services
         label: Servicii
-        file: src/content/settings/services.json
+        file: domfix-astro/src/content/settings/services.json
         fields:
           - label: Servicii
             name: items
@@ -63,7 +63,7 @@ collections:
 
       - name: portfolio
         label: Portofoliu
-        file: src/content/settings/portfolio.json
+        file: domfix-astro/src/content/settings/portfolio.json
         fields:
           - label: Proiecte
             name: items
