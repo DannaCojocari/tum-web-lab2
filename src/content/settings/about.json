@@ -1,4 +1,10 @@
 {
   "title": "Hello world",
-  "intro": "pp"
+  "intro": "pp",
+  "features": [
+    {
+      "title": "-",
+      "text": "-"
+    }
+  ]
 }
