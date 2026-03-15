@@ -241,7 +241,7 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
     <img class="lightbox-content" id="lightboxImage">
   </div>
 
-  <script type="application/json" id="service-data">{JSON.stringify(services)}</script>
+  <script type="application/json" id="service-data" set:html={JSON.stringify(services)} />
 
   <script>
     // Phone field validation
