@@ -1,0 +1,11 @@
+---
+const { image, alt, title, size } = Astro.props;
+// size: "large" | "tall" | "" (default)
+const sizeClass = size === 'large' ? 'portfolio-large' : size === 'tall' ? 'portfolio-tall' : '';
+---
+<div class={`portfolio-item ${sizeClass}`}>
+  <img src={image} alt={alt} />
+  <div class="portfolio-overlay">
+    <h3>{title}</h3>
+  </div>
+</div>
