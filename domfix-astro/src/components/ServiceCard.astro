@@ -1,0 +1,14 @@
+---
+const { number, title, image, alt } = Astro.props;
+const padded = String(number).padStart(2, '0');
+---
+<div class="service-card flex flex-col rounded-[10px] overflow-hidden cursor-pointer bg-[#faf5ee]" data-service={number}>
+  <div class="service-card-image w-full h-[40vh] overflow-hidden shrink-0">
+    <img src={image} alt={alt} class="w-full h-full object-cover transition-transform duration-[400ms]" />
+  </div>
+  <div class="service-card-footer pt-4 px-[18px] pb-[18px] flex flex-col gap-[6px] bg-[#faf5ee] border-t-2 border-[#e8d5c0]">
+    <span class="service-card-number text-xs font-bold text-[#9b6250] tracking-[0.1em] uppercase">{padded}</span>
+    <h3 class="service-card-title text-base font-bold text-[#4a3728] leading-[1.3] m-0">{title}</h3>
+    <span class="service-card-learn-more inline-block text-[0.82rem] font-semibold text-[#9b6250] tracking-[0.03em] mt-[6px]">Află mai multe →</span>
+  </div>
+</div>

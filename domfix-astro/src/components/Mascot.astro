@@ -1,0 +1,30 @@
+---
+---
+<div class="mascot" id="mascot" aria-label="Mascota DomFix">
+  <div class="mascot-bubble" role="tooltip">
+    <p class="mascot-bubble-greeting">Mă bucur să vă văd aici!</p>
+    <p class="mascot-bubble-text">Pentru mai multe detalii, nu ezitați să ne apelați:</p>
+    <a href="tel:+37376009015" class="mascot-bubble-cta">+373 76 009 015</a>
+  </div>
+  <div class="mascot-figure">
+    <img class="mascot-img" src="/photos/mascot.png" alt="Mascota DomFix" />
+  </div>
+  <button class="mascot-close" id="mascot-close" aria-label="Închide mascota" title="Închide">&times;</button>
+</div>
+
+<script>
+  setTimeout(() => {
+    const btn = document.getElementById('mascot-close');
+    if (btn) btn.classList.add('visible');
+  }, 10000);
+
+  document.getElementById('mascot-close').addEventListener('click', function (e) {
+    e.stopPropagation();
+    const mascot = document.getElementById('mascot');
+    this.style.display = 'none';
+    mascot.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+    mascot.style.opacity = '0';
+    mascot.style.transform = 'translateX(60px)';
+    setTimeout(() => { mascot.style.display = 'none'; }, 350);
+  });
+</script>

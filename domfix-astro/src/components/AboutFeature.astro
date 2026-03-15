@@ -1,0 +1,12 @@
+---
+const { title, text } = Astro.props;
+---
+<div class="about-feature flex gap-5 items-start">
+  <div class="feature-icon">
+    <span>✓</span>
+  </div>
+  <div class="feature-content flex-1">
+    <h3 class="feature-title">{title}</h3>
+    <p class="feature-text">{text}</p>
+  </div>
+</div>
