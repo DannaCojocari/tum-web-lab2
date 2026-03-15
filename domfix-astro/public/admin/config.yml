@@ -1,0 +1,83 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/photos
+public_folder: /photos
+
+locale: ro
+
+collections:
+
+  # ─── SITE SETTINGS ──────────────────────────────────────────────────────────
+  - name: settings
+    label: Setări site
+    files:
+
+      - name: hero
+        label: Secțiunea Hero
+        file: src/content/settings/hero.json
+        fields:
+          - { label: Titlu principal,                        name: title,              widget: string }
+          - { label: Subtitlu,                               name: subtitle,           widget: text   }
+          - { label: Text buton principal,                   name: cta_primary_text,   widget: string }
+          - { label: "Link buton principal (tel: sau #...)", name: cta_primary_href,   widget: string }
+          - { label: Text buton secundar,                    name: cta_secondary_text, widget: string }
+          - { label: Link buton secundar,                    name: cta_secondary_href, widget: string }
+
+      - name: about
+        label: Secțiunea Despre noi
+        file: src/content/settings/about.json
+        fields:
+          - { label: Titlu,                name: title, widget: string }
+          - { label: Paragraf introductiv, name: intro, widget: text   }
+          - label: Caracteristici
+            name: features
+            widget: list
+            fields:
+              - { label: Titlu, name: title, widget: string }
+              - { label: Text,  name: text,  widget: text   }
+
+      - name: services
+        label: Servicii
+        file: src/content/settings/services.json
+        fields:
+          - label: Servicii
+            name: items
+            widget: list
+            fields:
+              - { label: Ordine,          name: order,             widget: number, value_type: int }
+              - { label: Titlu,           name: title,             widget: string }
+              - { label: Imagine,         name: image,             widget: image  }
+              - { label: Alt imagine,     name: alt,               widget: string }
+              - { label: Subtitlu modal,  name: modal_subtitle,    widget: string }
+              - { label: Descriere modal, name: modal_description, widget: text   }
+              - label: Ce realizăm
+                name: tasks
+                widget: list
+                field: { label: Activitate, name: item, widget: string }
+              - label: Beneficii
+                name: benefits
+                widget: list
+                field: { label: Beneficiu, name: item, widget: string }
+
+      - name: portfolio
+        label: Portofoliu
+        file: src/content/settings/portfolio.json
+        fields:
+          - label: Proiecte
+            name: items
+            widget: list
+            fields:
+              - { label: Ordine,  name: order, widget: number, value_type: int }
+              - { label: Titlu,   name: title, widget: string }
+              - { label: Imagine, name: image, widget: image  }
+              - { label: Alt,     name: alt,   widget: string }
+              - label: "Marime (grila)"
+                name: size
+                widget: select
+                options:
+                  - { label: Normal,    value: ""    }
+                  - { label: Lat,       value: large }
+                  - { label: Inalt,     value: tall  }
+                default: ""

@@ -1,0 +1,22 @@
+{
+  "title": "Despre noi",
+  "intro": "Cu peste 10 ani de experiență în domeniul renovărilor și construcțiilor, DomFix este partenerul tău de încredere pentru transformarea spațiilor tale în locuințe de vis.",
+  "features": [
+    {
+      "title": "Experiență și profesionalism",
+      "text": "Echipa noastră de specialiști autorizați aduce expertiză în fiecare proiect, de la cele mai simple renovări până la transformări complete."
+    },
+    {
+      "title": "Calitate garantată",
+      "text": "Folosim doar materiale de calitate superioară și oferim garanție pentru toate lucrările executate, asigurând durabilitate pe termen lung."
+    },
+    {
+      "title": "Transparență totală",
+      "text": "Comunicăm deschis pe tot parcursul proiectului, oferind rapoarte detaliate și respectând bugetul și termenele stabilite."
+    },
+    {
+      "title": "Satisfacția clientului",
+      "text": "Peste 500 de proiecte finalizate cu succes și clienți mulțumiți care ne recomandă cu încredere. Satisfacția ta este prioritatea noastră."
+    }
+  ]
+}

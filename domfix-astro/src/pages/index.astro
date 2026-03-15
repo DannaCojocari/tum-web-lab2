@@ -7,6 +7,14 @@ import PortfolioItem from '../components/PortfolioItem.astro';
 import Footer from '../components/Footer.astro';
 import Mascot from '../components/Mascot.astro';
 import AboutFeature from '../components/AboutFeature.astro';
+// ── Settings ─────────────────────────────────────────────────────────────────
+import hero      from '../content/settings/hero.json';
+import about     from '../content/settings/about.json';
+import servicesData  from '../content/settings/services.json';
+import portfolioData from '../content/settings/portfolio.json';
+
+const services  = servicesData.items.sort((a, b) => a.order - b.order);
+const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
 ---
 <Layout>
   <Navbar />
@@ -22,18 +30,15 @@ import AboutFeature from '../components/AboutFeature.astro';
     <div class="container max-w-[90%] mx-auto px-5">
       <div class="hero-content">
         <div class="hero-text">
-          <h2 class="hero-title">Transformă-ți casa cu ajutorul experților</h2>
-          <p class="subheadline">
-            Servicii experte de renovare care dau viață viziunii tale.
-            De la bucătării la remodelări complete, ne ocupăm de fiecare detaliu cu grijă.
-          </p>
+          <h2 class="hero-title">{hero.title}</h2>
+          <p class="subheadline">{hero.subtitle}</p>
           <div class="cta-group flex gap-4 mt-3 flex-wrap">
-            <a href="tel:+37376009015" class="btn btn-primary">
-              Ia legătura cu noi
+            <a href={hero.cta_primary_href} class="btn btn-primary">
+              {hero.cta_primary_text}
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
             </a>
-            <a href="#portfolio" class="btn btn-secondary">
-              Explorează proiectele noastre
+            <a href={hero.cta_secondary_href} class="btn btn-secondary">
+              {hero.cta_secondary_text}
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
             </a>
           </div>
@@ -120,10 +125,14 @@ import AboutFeature from '../components/AboutFeature.astro';
       </div>
 
       <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-        <ServiceCard number={1} title="Renovări generale și structurale" image="/photos/service1.png" alt="Renovări generale și structurale" />
-        <ServiceCard number={2} title="Finisaje interioare" image="/photos/service2.png" alt="Finisaje interioare" />
-        <ServiceCard number={3} title="Instalații electrice și sanitare" image="/photos/service3.png" alt="Instalații electrice și sanitare" />
-        <ServiceCard number={4} title="Montaj pardoseli și tâmplărie" image="/photos/service4.png" alt="Montaj pardoseli și tâmplărie" />
+        {services.map((s) => (
+          <ServiceCard
+            number={s.order}
+            title={s.title}
+            image={s.image}
+            alt={s.alt}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -170,12 +179,14 @@ import AboutFeature from '../components/AboutFeature.astro';
       </div>
 
       <div class="portfolio-grid">
-        <PortfolioItem image="/photos/portfolio1.jpg" alt="Proiect renovare 1" title="Renovare completă apartament" size="large" />
-        <PortfolioItem image="/photos/portfolio2.jpg" alt="Proiect renovare 2" title="Bucătărie modernă" size="large" />
-        <PortfolioItem image="/photos/portfolio3.jpg" alt="Proiect renovare 3" title="Baie de lux" size="tall" />
-        <PortfolioItem image="/photos/portfolio4.jpg" alt="Proiect renovare 4" title="Living elegant" />
-        <PortfolioItem image="/photos/portfolio5.jpg" alt="Proiect renovare 5" title="Dormitor modern" size="large" />
-        <PortfolioItem image="/photos/portfolio6.jpg" alt="Proiect renovare 6" title="Hol și coridor" />
+        {portfolio.map((p) => (
+          <PortfolioItem
+            image={p.image}
+            alt={p.alt}
+            title={p.title}
+            size={p.size}
+          />
+        ))}
       </div>
     </div>
   </section>
@@ -184,12 +195,8 @@ import AboutFeature from '../components/AboutFeature.astro';
     <div class="container max-w-[90%] mx-auto px-5">
       <!-- Header: title + subtitle left-aligned -->
       <div class="about-header text-left mb-12">
-        <h2 class="about-title">Despre noi</h2>
-        <p class="about-intro">
-          Cu peste 10 ani de experiență în domeniul renovărilor și construcțiilor, 
-          <strong>DomFix</strong> este partenerul tău de încredere pentru transformarea 
-          spațiilor tale în locuințe de vis.
-        </p>
+        <h2 class="about-title">{about.title}</h2>
+        <p class="about-intro">{about.intro}</p>
       </div>
 
       <div class="about-layout grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[60px] items-start mx-auto">
@@ -233,6 +240,8 @@ import AboutFeature from '../components/AboutFeature.astro';
     <span class="lightbox-close">&times;</span>
     <img class="lightbox-content" id="lightboxImage">
   </div>
+
+  <script type="application/json" id="service-data">{JSON.stringify(services)}</script>
 
   <script>
     // Phone field validation
@@ -312,74 +321,10 @@ import AboutFeature from '../components/AboutFeature.astro';
       }
     })();
 
-    // Service details data
-    const serviceDetails = {
-      1: {
-        title: "Renovări generale și structurale",
-        subtitle: "Transformăm spațiul de la bază",
-        description: "Executăm lucrările esențiale care stau la baza unei renovări durabile și sigure.",
-        tasks: [
-          "Demolări controlate și pregătirea spațiului",
-          "Compartimentări interioare (rigips/zidărie)",
-          "Turnare șape și nivelare pardoseli",
-          "Izolații termice și fonice"
-        ],
-        benefits: [
-          "Structură solidă și durabilă",
-          "Confort termic și fonic îmbunătățit",
-          "Spațiu reorganizat eficient"
-        ]
-      },
-      2: {
-        title: "Finisaje interioare",
-        subtitle: "Detalii care dau viață locuinței",
-        description: "Realizăm finisaje moderne, curate și durabile, cu atenție la fiecare detaliu.",
-        tasks: [
-          "Gletuire și vopsire profesională",
-          "Montaj gresie și faianță",
-          "Tencuieli decorative și placări",
-          "Tapet și elemente decorative"
-        ],
-        benefits: [
-          "Aspect modern și elegant",
-          "Durabilitate în timp",
-          "Creșterea valorii locuinței"
-        ]
-      },
-      3: {
-        title: "Instalații electrice și sanitare",
-        subtitle: "Siguranță și funcționalitate fără compromisuri",
-        description: "Modernizăm instalațiile pentru confort, eficiență și siguranță pe termen lung.",
-        tasks: [
-          "Refacerea instalației electrice",
-          "Montaj iluminat interior",
-          "Instalații sanitare și termice",
-          "Montaj obiecte sanitare și calorifere",
-          "Încălzire în pardoseală (opțional)"
-        ],
-        benefits: [
-          "Siguranță electrică sporită",
-          "Consum energetic optimizat",
-          "Confort termic superior"
-        ]
-      },
-      4: {
-        title: "Montaj pardoseli și tâmplărie",
-        subtitle: "Finisajele care definesc rezultatul final",
-        description: "Montaj precis pentru pardoseli, uși și ferestre, cu un aspect elegant și durabil.",
-        tasks: [
-          "Montaj parchet, laminat sau vinil",
-          "Montaj plinte și profile",
-          "Montaj uși interioare/exterioare",
-          "Montaj ferestre PVC sau aluminiu"
-        ],
-        benefits: [
-          "Finisaje premium",
-          "Izolare termică și fonică mai bună",
-          "Durabilitate și precizie"
-        ]
-      }
-    };
+    // Service details — injected at build time from services.json
+    const serviceDetails = {};
+    JSON.parse(document.getElementById('service-data').textContent)
+      .forEach(s => { serviceDetails[s.order] = s; });
 
     // Get modal elements
     const modal = document.getElementById('serviceModal');
@@ -395,8 +340,8 @@ import AboutFeature from '../components/AboutFeature.astro';
       
       modalBody.innerHTML = `
         <h2 class="modal-title text-[1.3rem] md:text-[2rem] font-bold text-[#4a3728] mb-[10px] tracking-[-0.02em] pr-8 md:pr-0">${service.title}</h2>
-        <p class="modal-subtitle text-[1rem] md:text-[1.25rem] text-[#8b6b55] italic mb-5 font-medium">${service.subtitle}</p>
-        <p class="modal-description text-[0.95rem] md:text-[1.1rem] text-[#5a3e2b] leading-[1.7] mb-[30px]">${service.description}</p>
+        <p class="modal-subtitle text-[1rem] md:text-[1.25rem] text-[#8b6b55] italic mb-5 font-medium">${service.modal_subtitle}</p>
+        <p class="modal-description text-[0.95rem] md:text-[1.1rem] text-[#5a3e2b] leading-[1.7] mb-[30px]">${service.modal_description}</p>
         
         <div class="modal-sections flex flex-col md:flex-row gap-5 md:gap-[30px] mt-5">
           <div class="modal-section flex-1">
