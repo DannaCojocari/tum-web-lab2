@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "order": 1, "title": "Renovare completă apartament", "image": "/photos/portfolio1.jpg", "alt": "Proiect renovare 1", "size": "large" },
+    { "order": 2, "title": "Bucătărie modernă",            "image": "/photos/portfolio2.jpg", "alt": "Proiect renovare 2", "size": "large" },
+    { "order": 3, "title": "Baie de lux",                  "image": "/photos/portfolio3.jpg", "alt": "Proiect renovare 3", "size": "tall"  },
+    { "order": 4, "title": "Living elegant",               "image": "/photos/portfolio4.jpg", "alt": "Proiect renovare 4", "size": ""      },
+    { "order": 5, "title": "Dormitor modern",              "image": "/photos/portfolio5.jpg", "alt": "Proiect renovare 5", "size": "large" },
+    { "order": 6, "title": "Hol și coridor",               "image": "/photos/portfolio6.jpg", "alt": "Proiect renovare 6", "size": ""      }
+  ]
+}

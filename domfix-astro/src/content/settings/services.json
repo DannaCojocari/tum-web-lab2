@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "order": 1,
+      "title": "Renovări generale și structurale",
+      "image": "/photos/service1.png",
+      "alt": "Renovări generale și structurale",
+      "modal_subtitle": "Transformăm spațiul de la bază",
+      "modal_description": "Executăm lucrările esențiale care stau la baza unei renovări durabile și sigure.",
+      "tasks": [
+        "Demolări controlate și pregătirea spațiului",
+        "Compartimentări interioare (rigips/zidărie)",
+        "Turnare șape și nivelare pardoseli",
+        "Izolații termice și fonice"
+      ],
+      "benefits": [
+        "Structură solidă și durabilă",
+        "Confort termic și fonic îmbunătățit",
+        "Spațiu reorganizat eficient"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Finisaje interioare",
+      "image": "/photos/service2.png",
+      "alt": "Finisaje interioare",
+      "modal_subtitle": "Detalii care dau viață locuinței",
+      "modal_description": "Realizăm finisaje moderne, curate și durabile, cu atenție la fiecare detaliu.",
+      "tasks": [
+        "Gletuire și vopsire profesională",
+        "Montaj gresie și faianță",
+        "Tencuieli decorative și placări",
+        "Tapet și elemente decorative"
+      ],
+      "benefits": [
+        "Aspect modern și elegant",
+        "Durabilitate în timp",
+        "Creșterea valorii locuinței"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Instalații electrice și sanitare",
+      "image": "/photos/service3.png",
+      "alt": "Instalații electrice și sanitare",
+      "modal_subtitle": "Siguranță și funcționalitate fără compromisuri",
+      "modal_description": "Modernizăm instalațiile pentru confort, eficiență și siguranță pe termen lung.",
+      "tasks": [
+        "Refacerea instalației electrice",
+        "Montaj iluminat interior",
+        "Instalații sanitare și termice",
+        "Montaj obiecte sanitare și calorifere",
+        "Încălzire în pardoseală (opțional)"
+      ],
+      "benefits": [
+        "Siguranță electrică sporită",
+        "Consum energetic optimizat",
+        "Confort termic superior"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Montaj pardoseli și tâmplărie",
+      "image": "/photos/service4.png",
+      "alt": "Montaj pardoseli și tâmplărie",
+      "modal_subtitle": "Finisajele care definesc rezultatul final",
+      "modal_description": "Montaj precis pentru pardoseli, uși și ferestre, cu un aspect elegant și durabil.",
+      "tasks": [
+        "Montaj parchet, laminat sau vinil",
+        "Montaj plinte și profile",
+        "Montaj uși interioare/exterioare",
+        "Montaj ferestre PVC sau aluminiu"
+      ],
+      "benefits": [
+        "Finisaje premium",
+        "Izolare termică și fonică mai bună",
+        "Durabilitate și precizie"
+      ]
+    }
+  ]
+}
