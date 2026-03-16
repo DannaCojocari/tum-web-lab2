@@ -13,7 +13,10 @@ import about     from '../content/settings/about.json';
 import servicesData  from '../content/settings/services.json';
 import portfolioData from '../content/settings/portfolio.json';
 
-const services  = servicesData.items.sort((a, b) => a.order - b.order);
+const services  = servicesData.items
+  .filter(s => s.enabled)
+  .sort((a, b) => a.order - b.order)
+  .map((s, i) => ({ ...s, order: i + 1 }));
 const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
 ---
 <Layout>

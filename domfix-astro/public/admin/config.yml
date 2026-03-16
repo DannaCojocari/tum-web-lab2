@@ -1,3 +1,5 @@
+local_backend: true
+
 backend:
   name: git-gateway
   branch: master
@@ -46,6 +48,7 @@ collections:
             name: items
             widget: list
             fields:
+              - { label: Activ,           name: enabled,           widget: boolean, default: true }
               - { label: Ordine,          name: order,             widget: number, value_type: int }
               - { label: Titlu,           name: title,             widget: string }
               - { label: Imagine,         name: image,             widget: image  }
