@@ -9,11 +9,12 @@ exports.handler = async (event) => {
   }
 
   const { data, form_name } = payload;
-  const name    = data.name    || 'Client';
-  const phone   = data.phone   || '—';
-  const email   = data.email   || '';
-  const service = data.service || (form_name === 'oferta' ? 'serviciu solicitat' : 'servicii de renovare');
-  const message = data.message || '';
+  const formData = data || payload;
+  const name    = formData.name    || 'Client';
+  const phone   = formData.phone   || '—';
+  const email   = formData.email   || '';
+  const service = formData.service || (form_name === 'oferta' ? 'serviciu solicitat' : 'servicii de renovare');
+  const message = formData.message || '';
 
   if (!email || !email.includes('@')) {
     return { statusCode: 200, body: 'No valid email, skipping.' };
