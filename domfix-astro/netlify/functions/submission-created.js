@@ -51,7 +51,12 @@ Chișinău, Moldova`,
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    await transporter.sendMail({
+      from: `"DomFix Site" <${process.env.GMAIL_USER}>`,
+      to: process.env.GMAIL_USER,
+      subject: `Cerere nouă — ${service}`,
+      text: `Cerere nouă primită pe domfix.md:\n\nNume: ${name}\nTelefon: ${phone}\nEmail: ${email}\nServiciu: ${service}\nMesaj: ${message || '—'}`,
+    });
     return { statusCode: 200, body: 'Email sent.' };
   } catch (err) {
     console.error('Mail error:', err);
