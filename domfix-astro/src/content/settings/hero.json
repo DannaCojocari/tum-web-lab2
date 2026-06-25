@@ -1,8 +1,9 @@
 {
-  "title": "Transformă-ți casa cu ajutorul experților",
-  "subtitle": "Servicii experte de renovare care dau viață viziunii tale.\nDe la bucătării la remodelări complete, ne ocupăm de fiecare detaliu cu grijă.",
-  "cta_primary_text": "Ia legătura cu noi",
-  "cta_primary_href": "tel:+37376009015",
-  "cta_secondary_text": "Explorează proiectele noastre",
-  "cta_secondary_href": "#portfolio"
+  "title_line1": "Orice problemă în casă —",
+  "title_line2": "rezolvată azi.",
+  "subtitle": "Electrician, instalator, tâmplar, vopsitor — venim la tine în 2 ore. Prețuri fixe, fără surprize, garanție pentru fiecare lucrare.",
+  "cta_primary_text": "Sună acum — venim azi",
+  "cta_primary_href": "tel:+37360138297",
+  "cta_secondary_text": "Vezi serviciile",
+  "cta_secondary_href": "#services"
 }

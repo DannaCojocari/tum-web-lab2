@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import Mascot from '../../components/Mascot.astro';
+import AboutFeature from '../../components/AboutFeature.astro';
+import TimelineStep from '../../components/TimelineStep.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import PricingTable from '../../components/PricingTable.astro';
+import Faq from '../../components/Faq.astro';
+import ContactForm from '../../components/ContactForm.astro';
+
+import servicesData from '../../content/settings/services.json';
+import whyChooseUsData from '../../content/settings/why-choose-us.json';
+
+export function getStaticPaths() {
+  return servicesData.items
+    .filter((s) => s.enabled)
+    .map((s) => ({
+      params: { slug: s.slug },
+      props: { service: s },
+    }));
+}
+
+const { service } = Astro.props;
+const whyUs = service.why_choose_us?.length ? service.why_choose_us : whyChooseUsData.items;
+---
+<Layout title={`${service.title} — DomFix`}>
+  <Navbar />
+
+  <ServiceHero
+    title={service.title}
+    subtitle={service.hero_subtitle}
+    image={service.image}
+    alt={service.alt}
+  />
+
+  <section class="service-section service-overview scroll-mt-[100px]">
+    <div class="container max-w-[90%] mx-auto px-5">
+      <div class="service-overview-grid grid grid-cols-1 md:grid-cols-1 gap-10 items-start">
+        <div class="service-overview-text">
+          <h2 class="service-section-title">Despre acest serviciu</h2>
+          <p class="service-overview-description">{service.modal_description}</p>
+        </div>
+        <div class="service-tasks-card">
+          <h3 class="service-tasks-title">Ce include</h3>
+          <ul class="service-tasks-list">
+            {service.tasks.map((task) => (
+              <li>{task}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {service.process?.length > 0 && (
+    <section class="service-section service-process bg-[#f0e6d8]">
+      <div class="container max-w-[90%] mx-auto px-5">
+        <h2 class="service-section-title text-center mb-10">Cum funcționează procesul</h2>
+        <div class="timeline-track grid grid-cols-1 md:grid-cols-4 items-stretch relative gap-4 md:gap-0">
+          {service.process.map((p) => (
+            <TimelineStep step={p.step} icon={p.icon} badge={p.badge} title={p.title} text={p.text} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {service.pricing?.length > 0 && (
+    <section class="service-section service-pricing-section">
+      <div class="container max-w-[90%] mx-auto px-5">
+        <h2 class="service-section-title text-center mb-3">Prețuri orientative</h2>
+        <p class="service-section-subtitle text-center mb-10">Pentru o sumă exactă, în funcție de specificul lucrării tale, solicită o ofertă gratuită.</p>
+        <PricingTable items={service.pricing} note={service.price_note} />
+      </div>
+    </section>
+  )}
+
+  <section class="service-section service-why bg-[#f0e6d8]">
+    <div class="container max-w-[90%] mx-auto px-5">
+      <h2 class="service-section-title text-center mb-10">De ce să ne alegi</h2>
+      <div class="service-why-grid grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+        {whyUs.map((item) => (
+          <AboutFeature title={item.title} text={item.text} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {service.faq?.length > 0 && (
+    <section class="service-section service-faq-section">
+      <div class="container max-w-[90%] mx-auto px-5">
+        <h2 class="service-section-title text-center mb-10">Întrebări frecvente</h2>
+        <Faq items={service.faq} />
+      </div>
+    </section>
+  )}
+
+  <section id="oferta" class="service-section service-contact-section bg-[#f0e6d8] scroll-mt-[100px]">
+    <div class="container max-w-[90%] mx-auto px-5">
+      <div class="service-contact-grid grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div class="service-contact-text">
+          <h2 class="service-section-title">Hai să discutăm despre proiectul tău</h2>
+          <p class="service-section-subtitle">Completează formularul sau sună-ne direct — răspundem rapid și venim la evaluare în maximum 2 ore.</p>
+          <a href="tel:+37360138297" class="service-contact-phone">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.21 6.21l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +373 60 138 297
+          </a>
+        </div>
+        <ContactForm serviceTitle={service.title} />
+      </div>
+    </div>
+  </section>
+
+  <Mascot />
+  <Footer />
+</Layout>

@@ -2,83 +2,379 @@
   "items": [
     {
       "enabled": true,
-      "alt": "Renovări generale și structurale",
-      "modal_subtitle": "Transformăm spațiul de la bază",
-      "modal_description": "Executăm lucrările esențiale care stau la baza unei renovări durabile și sigure.",
       "order": 1,
+      "title": "Electricitate",
+      "slug": "electricitate",
+      "image": "/photos/electricity.jpg",
+      "alt": "Electricitate",
+      "modal_subtitle": "Instalații electrice sigure și conforme normelor",
+      "modal_description": "Executăm lucrări complete de electricitate rezidențială și comercială — de la tablouri electrice la prize, întrerupătoare și iluminat. Totul realizat de electricieni autorizați, cu materiale certificate.",
+      "hero_subtitle": "Instalații electrice sigure, realizate de electricieni autorizați. Venim la tine în 2 ore și lucrăm cu materiale certificate.",
       "tasks": [
-        "Demolări controlate și pregătirea spațiului",
-        "Compartimentări interioare (rigips/zidărie)",
-        "Turnare șape și nivelare pardoseli",
-        "Izolații termice și fonice"
+        "Proiectare și refacere instalație electrică",
+        "Montaj tablou electric și siguranțe",
+        "Montaj prize, întrerupătoare și puncte de lumină",
+        "Instalare iluminat interior și exterior",
+        "Tragere cabluri și tuburi de protecție",
+        "Montaj sisteme de automatizare (smart home)"
       ],
-      "title": "Renovări generale și structurale",
-      "image": "/photos/service1.png",
-      "benefits": [
-        "Structură solidă și durabilă",
-        "Confort termic și fonic îmbunătățit",
-        "Spațiu reorganizat eficient"
-      ]
-    },
-    {
-      "enabled": true,
-      "alt": "Finisaje interioare",
-      "modal_subtitle": "Detalii care dau viață locuinței",
-      "modal_description": "Realizăm finisaje moderne, curate și durabile, cu atenție la fiecare detaliu.",
-      "order": 2,
-      "tasks": [
-        "Gletuire și vopsire profesională",
-        "Montaj gresie și faianță",
-        "Tencuieli decorative și placări",
-        "Tapet și elemente decorative"
-      ],
-      "title": "Finisaje interioare",
-      "image": "/photos/service2.png",
-      "benefits": [
-        "Aspect modern și elegant",
-        "Durabilitate în timp",
-        "Creșterea valorii locuinței"
-      ]
-    },
-    {
-      "enabled": true,
-      "alt": "Instalații electrice și sanitare",
-      "modal_subtitle": "Siguranță și funcționalitate fără compromisuri",
-      "modal_description": "Modernizăm instalațiile pentru confort, eficiență și siguranță pe termen lung.",
-      "order": 3,
-      "tasks": [
-        "Refacerea instalației electrice",
-        "Montaj iluminat interior",
-        "Instalații sanitare și termice",
-        "Montaj obiecte sanitare și calorifere",
-        "Încălzire în pardoseală (opțional)"
-      ],
-      "title": "Instalații electrice și sanitare",
-      "image": "/photos/service3.png",
       "benefits": [
         "Siguranță electrică sporită",
         "Consum energetic optimizat",
-        "Confort termic superior"
+        "Lucrări conforme normelor în vigoare",
+        "Garanție pentru manoperă și materiale"
+      ],
+      "process": [
+        { "step": 1, "icon": "search", "badge": "check", "title": "Evaluare și deviz", "text": "Electricianul vine la fața locului, analizează instalația existentă și îți oferă un deviz detaliat, fără costuri ascunse." },
+        { "step": 2, "title": "Pregătire și trasare", "icon": "clipboard", "badge": "arrow", "text": "Se trasează circuitele, se frezează canalele necesare și se montează tuburile de protecție pentru cabluri." },
+        { "step": 3, "title": "Execuție lucrări", "icon": "zap", "badge": "arrow", "text": "Se montează cablurile, tablourile, prizele, întrerupătoarele și corpurile de iluminat conform proiectului." },
+        { "step": 4, "title": "Testare și recepție", "icon": "shield-check", "badge": "check", "text": "Se verifică fiecare circuit cu aparatură de măsură, se predă documentația și se eliberează garanția scrisă." }
+      ],
+      "pricing": [
+        { "label": "Montaj priză / întrerupător", "price": "150–250 lei", "unit": "buc" },
+        { "label": "Montaj corp de iluminat", "price": "100–200 lei", "unit": "buc" },
+        { "label": "Montaj tablou electric (12–24 module)", "price": "800–1500 lei", "unit": "tablou" },
+        { "label": "Tragere cablu + montaj tub protecție", "price": "25–40 lei", "unit": "ml" },
+        { "label": "Refacere instalație electrică apartament 2 camere", "price": "4000–7000 lei", "unit": "proiect" }
+      ],
+      "price_note": "Prețurile sunt orientative și pot varia în funcție de complexitatea lucrării, materialele alese și accesibilitatea spațiului. Solicită un deviz gratuit pentru o estimare exactă.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Electricienii voștri sunt autorizați?", "answer": "Da, toți electricienii noștri dețin autorizație ANRE și lucrează conform normativelor în vigoare. La final eliberăm documentația necesară." },
+        { "question": "Cât durează refacerea instalației electrice pentru un apartament?", "answer": "Pentru un apartament de 2 camere, lucrarea durează în medie 2–4 zile lucrătoare, în funcție de complexitate și suprafață." },
+        { "question": "Oferiți garanție pentru lucrările electrice?", "answer": "Da, oferim garanție scrisă de 24 de luni pentru manoperă și respectăm garanția producătorului pentru materialele montate." },
+        { "question": "Pot să aleg eu materialele sau le furnizați voi?", "answer": "Ambele variante sunt posibile. Putem furniza materiale certificate la prețuri competitive sau putem lucra cu materialele achiziționate de tine." },
+        { "question": "Veniți și pentru intervenții mici, nu doar renovări complete?", "answer": "Absolut. Intervenim și pentru montaj priză, înlocuire siguranță sau instalare corp de iluminat — fără valoare minimă a comenzii." }
       ]
     },
     {
       "enabled": true,
-      "alt": "Montaj pardoseli și tâmplărie",
-      "modal_subtitle": "Finisajele care definesc rezultatul final",
-      "modal_description": "Montaj precis pentru pardoseli, uși și ferestre, cu un aspect elegant și durabil.",
-      "order": 4,
+      "order": 2,
+      "title": "Instalații sanitare",
+      "slug": "instalatii-sanitare",
+      "image": "/photos/service3.png",
+      "alt": "Instalații sanitare",
+      "modal_subtitle": "Instalații de apă și canalizare fără bătăi de cap",
+      "modal_description": "De la montaj obiecte sanitare la refacerea completă a instalațiilor de apă rece, caldă și canalizare. Lucrăm rapid, curat și cu materiale de calitate superioară.",
+      "hero_subtitle": "Montaj și reparații instalații sanitare — venim în 2 ore, lucrăm curat și garantăm fiecare intervenție.",
       "tasks": [
-        "Montaj parchet, laminat sau vinil",
-        "Montaj plinte și profile",
-        "Montaj uși interioare/exterioare",
-        "Montaj ferestre PVC sau aluminiu"
+        "Montaj și înlocuire obiecte sanitare (chiuvetă, vas WC, cadă, duș)",
+        "Refacere instalații apă rece și caldă",
+        "Montaj și înlocuire robinete și baterii",
+        "Montaj boilere și centrale termice",
+        "Reparații și deblocare canalizare",
+        "Montaj sisteme de filtrare apă"
       ],
-      "title": "Montaj pardoseli și tâmplărie",
-      "image": "/photos/service4.png",
       "benefits": [
-        "Finisaje premium",
-        "Izolare termică și fonică mai bună",
-        "Durabilitate și precizie"
+        "Intervenție rapidă, inclusiv urgențe",
+        "Instalații etanșe, fără scurgeri",
+        "Materiale certificate și durabile",
+        "Garanție scrisă pentru toate lucrările"
+      ],
+      "process": [
+        { "step": 1, "title": "Diagnostic și deviz", "icon": "search", "badge": "check","text": "Instalatorul vine la tine, verifică starea instalațiilor existente și îți prezintă un deviz transparent înainte de a începe." },
+        { "step": 2, "title": "Demontare și pregătire", "icon": "clipboard", "badge": "arrow", "text": "Se demontează elementele vechi și se pregătesc racordurile pentru noile instalații, cu protejarea spațiului înconjurător." },
+        { "step": 3, "title": "Montaj și racordare", "icon": "tools", "badge": "arrow", "text": "Se instalează obiectele sanitare, se racordează la rețeaua de apă și canalizare și se verifică etanșeitatea." },
+        { "step": 4, "title": "Testare și finalizare", "icon": "shield-check", "badge": "check", "text": "Se testează sub presiune întreaga instalație, se verifică scurgerile și se curăță zona de lucru." }
+      ],
+      "pricing": [
+        { "label": "Montaj chiuvetă / lavoar", "price": "200–350 lei", "unit": "buc" },
+        { "label": "Montaj vas WC complet", "price": "300–500 lei", "unit": "buc" },
+        { "label": "Montaj cabină duș sau cadă", "price": "500–900 lei", "unit": "buc" },
+        { "label": "Montaj baterie / robinet", "price": "100–200 lei", "unit": "buc" },
+        { "label": "Refacere instalație sanitară baie completă", "price": "3000–6000 lei", "unit": "proiect" }
+      ],
+      "price_note": "Prețurile includ manopera. Materialele se calculează separat în funcție de alegerea clientului. Devizul exact se stabilește după inspecția la fața locului.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Interveniți și în cazul urgențelor (țeavă spartă, scurgere)?", "answer": "Da, oferim intervenții de urgență în aceeași zi. Sunați-ne și un instalator ajunge la dvs. în maximum 2 ore." },
+        { "question": "Pot înlocui doar bateria sau trebuie să refac toată instalația?", "answer": "Putem înlocui orice element izolat — baterie, robinet, sifon, garnitură — fără a fi necesară refacerea completă a instalației." },
+        { "question": "Montați și boilere electrice sau centrale termice?", "answer": "Da, montăm boilere electrice, centrale termice pe gaz sau în condensare, inclusiv racordarea la instalațiile existente." },
+        { "question": "Cât durează o intervenție tipică la baie?", "answer": "Înlocuirea unui obiect sanitar durează 1–3 ore. Renovarea completă a băii (inclusiv instalații) poate dura 3–7 zile lucrătoare." },
+        { "question": "Curățați zona după lucrare?", "answer": "Absolut. Lăsăm spațiul curat după fiecare intervenție — este parte din angajamentul nostru față de clienți." }
+      ]
+    },
+    {
+      "enabled": true,
+      "order": 3,
+      "title": "Uși și ferestre",
+      "slug": "usi-si-ferestre",
+      "image": "/photos/windows.png",
+      "alt": "Uși și ferestre",
+      "modal_subtitle": "Montaj profesional pentru izolare și confort maxim",
+      "modal_description": "Montăm uși și ferestre PVC, aluminiu sau lemn stratificat cu precizie milimetrică. Ferestrele și ușile corect montate economisesc energie și oferă liniște în casă.",
+      "hero_subtitle": "Montaj uși și ferestre PVC sau aluminiu — etanș, silențios, cu garanție. Evaluare gratuită la domiciliu.",
+      "tasks": [
+        "Montaj ferestre PVC cu geam termopan",
+        "Montaj ferestre din aluminiu sau lemn stratificat",
+        "Montaj uși de intrare blindate sau placate",
+        "Montaj uși interioare (glisante, batante, pivotante)",
+        "Reglaj și service tâmplărie existentă",
+        "Aplicare folii și accesorii de etanșare"
+      ],
+      "benefits": [
+        "Izolare termică și fonică superioară",
+        "Reducerea facturii la energie",
+        "Montaj etanș, fără punți termice",
+        "Garanție pentru tâmplărie și manoperă"
+      ],
+      "process": [
+        { "step": 1, "title": "Măsurători și ofertă", "icon": "ruler", "badge": "check", "text": "Venim la tine, luăm măsurătorile exacte ale golurilor și îți prezentăm o ofertă completă cu mai multe opțiuni de profil și geam." },
+        { "step": 2, "title": "Comandă și livrare", "icon": "palette", "badge": "arrow", "text": "Tâmplăria se produce la comandă conform măsurătorilor. Timpul de producție este de obicei 7–14 zile lucrătoare." },
+        { "step": 3, "title": "Demontare și montaj", "icon": "tools", "badge": "arrow", "text": "Se demontează tâmplăria veche, se pregătesc golurile și se montează noile ferestre/uși cu spumă poliuretanică și profile de etanșare." },
+        { "step": 4, "title": "Reglaj și finisare", "icon": "shield-check", "badge": "check", "text": "Se reglează mecanismele, se aplică chiturile de finisare, se curăță geamurile și se instruiește clientul privind întreținerea." }
+      ],
+      "pricing": [
+        { "label": "Montaj fereastră PVC (un canat)", "price": "400–600 lei", "unit": "buc" },
+        { "label": "Montaj fereastră PVC (două canaturi)", "price": "600–900 lei", "unit": "buc" },
+        { "label": "Montaj ușă interior", "price": "350–550 lei", "unit": "buc" },
+        { "label": "Montaj ușă de intrare blindată", "price": "600–1000 lei", "unit": "buc" },
+        { "label": "Reglaj și service tâmplărie", "price": "150–300 lei", "unit": "vizită" }
+      ],
+      "price_note": "Prețurile se referă exclusiv la manoperă. Costul tâmplăriei (ferestre, uși) se stabilește în funcție de dimensiuni, profilul ales și tipul de geam. Oferta completă include ambele componente.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Cât de repede pot fi montate ferestrele după comandă?", "answer": "Producția durează 7–14 zile lucrătoare, iar montajul se realizează în aceeași zi cu livrarea, de obicei în 1–2 zile pentru un apartament standard." },
+        { "question": "Puteți monta și tâmplăria cumpărată de mine de la alt furnizor?", "answer": "Da, montăm tâmplărie indiferent de furnizor, cu condiția ca aceasta să fie standard și să corespundă măsurătorilor golurilor." },
+        { "question": "Ce tip de geam recomandați pentru izolare fonică?", "answer": "Recomandăm geam tripan (4/16/4/16/4) sau cu sticlă fonoizolantă de 6 mm pentru apartamentele de la stradă sau etajele inferioare." },
+        { "question": "Montați și glafuri interioare și exterioare?", "answer": "Da, montajul complet include și glafurile (pervazurile) interioare din PVC sau aluminiu și cele exterioare din tablă vopsită în câmp electrostatic." },
+        { "question": "Ce garanție oferiți pentru montaj?", "answer": "Oferim 24 de luni garanție pentru manoperă. Garanția pentru tâmplărie urmează termenul producătorului, de obicei 5–10 ani." }
+      ]
+    },
+    {
+      "enabled": true,
+      "order": 4,
+      "title": "Tapete și vopsit",
+      "slug": "tapete-si-vopsit",
+      "image": "/photos/vopsire.jpg",
+      "alt": "Tapete și vopsit",
+      "modal_subtitle": "Finisaje curate, uniforme și de lungă durată",
+      "modal_description": "Realizăm lucrări de vopsitorie și tapetare la standarde profesionale — suprafețe perfect uniforme, fără denivelări, cu materiale de calitate și finisaje durabile.",
+      "hero_subtitle": "Vopsitorie și tapetare profesională — suprafețe uniforme, culori exacte, finisaje care durează ani de zile.",
+      "tasks": [
+        "Chituire și șlefuire suprafețe (pereți, tavan)",
+        "Grunduire și aplicare vopsea lavabilă",
+        "Tencuieli decorative (structurate, venetiene)",
+        "Montaj tapet (simplu, vinil, fibră de sticlă)",
+        "Vopsire elemente metalice și lemn",
+        "Aplicare vopsele speciale (anticondens, antimucegai)"
+      ],
+      "benefits": [
+        "Suprafețe perfect plane și uniforme",
+        "Culori exacte conform mostrelor alese",
+        "Finisaje durabile, ușor de întreținut",
+        "Spațiu de lucru protejat și curățat după execuție"
+      ],
+      "process": [
+        { "step": 1, "title": "Consultanță și alegere materiale", "icon": "tools", "badge": "check", "text": "Te ajutăm să alegi culorile și tipul de vopsea sau tapet potrivit pentru fiecare cameră, cu mostre reale." },
+        { "step": 2, "title": "Pregătire suprafețe", "icon": "palette", "badge": "arrow", "text": "Se chitează fisurile, se șlefuiesc neregularitățile și se grunduiesc suprafețele pentru o aderență optimă." },
+        { "step": 3, "title": "Aplicare finisaj", "icon": "roller", "badge": "arrow", "text": "Se aplică vopseaua în 2–3 straturi sau se lipește tapetul cu precizie, îmbinările invizibile și colțurile perfect drepte." },
+        { "step": 4, "title": "Curățenie și predare", "icon": "shield-check", "badge": "check", "text": "Se îndepărtează toate foliile de protecție, se curăță zona și se predă spațiul gata de mobilat." }
+      ],
+      "pricing": [
+        { "label": "Vopsire pereți (2 straturi, grunduit inclus)", "price": "25–40 lei", "unit": "m²" },
+        { "label": "Chituire + vopsire pereți (finisaj fin)", "price": "50–80 lei", "unit": "m²" },
+        { "label": "Montaj tapet simplu", "price": "30–50 lei", "unit": "m²" },
+        { "label": "Tencuială decorativă (venetiană / structurată)", "price": "80–150 lei", "unit": "m²" },
+        { "label": "Vopsire tavan", "price": "30–50 lei", "unit": "m²" }
+      ],
+      "price_note": "Prețurile includ manopera. Vopseaua, tapetul și materialele auxiliare (chit, grund, adeziv) se calculează separat sau pot fi incluse în ofertă la cerere.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Cât timp trebuie să aștept după vopsire înainte să mobilez?", "answer": "Vopseaua lavabilă standard se usucă în 4–6 ore și permite reoccuparea camerei după 24 de ore. Mobilele pot fi mutate după 48–72 de ore pentru rezultate optime." },
+        { "question": "Puteți obține culoarea exactă din catalogul pe care îl am?", "answer": "Da, lucrăm cu sisteme de dozare computerizată (Tikkurila, Dulux, Caparol) care reproduc orice culoare cu precizie din codul de culoare sau mostre." },
+        { "question": "Protejeți mobila și parchetul în timpul lucrului?", "answer": "Absolut. Acoperim tot ce nu se vopsește — pardoseli, uși, prize — cu folie și bandă de mascare înainte de a începe." },
+        { "question": "Tapetul vechi trebuie să-l dau jos eu sau faceți voi?", "answer": "Noi ne ocupăm de demontarea tapetului vechi, pregătirea pereților și aplicarea celui nou — totul inclus în serviciu." },
+        { "question": "Ce faceți dacă pereții au umezeală sau mucegai?", "answer": "Tratăm suprafețele cu soluții antimucegai specializate și aplicăm vopsele cu proprietăți fungicide. Pentru cazuri grave, investigăm sursa și recomandăm soluții de izolare." }
+      ]
+    },
+    {
+      "enabled": true,
+      "order": 5,
+      "title": "Montaj mobilă",
+      "slug": "montaj-mobila",
+      "image": "/photos/mobila.jpg",
+      "alt": "Montaj mobilă",
+      "modal_subtitle": "Mobilă asamblată corect, rapid și fără stres",
+      "modal_description": "Montăm orice tip de mobilă la cutie — de la rafturi IKEA la dulapuri modulare complexe — cu precizie și fără piesele rămase pe jos.",
+      "hero_subtitle": "Asamblare și montaj mobilă de orice tip — venim la tine, montăm corect și predăm spațiul gata de folosit.",
+      "tasks": [
+        "Asamblare mobilă la cutie (IKEA, Jysk, Mobexpert etc.)",
+        "Montaj dulapuri și șifoniere modulare",
+        "Montaj bucătării complete cu electrocasnice",
+        "Montaj paturi, biblioteci și rafturi",
+        "Montaj mobilă de baie (vaniti, oglinzi, dulăpioare)",
+        "Relocare și reasamblare mobilă existentă"
+      ],
+      "benefits": [
+        "Montaj corect conform instrucțiunilor producătorului",
+        "Nicio piesă lipsă sau montată greșit",
+        "Intervenție rapidă, de obicei în aceeași zi",
+        "Eliminăm ambalajele după montaj"
+      ],
+      "process": [
+        { "step": 1, "title": "Programare și confirmare", "icon": "clipboard", "badge": "check", "text": "Stabilim o oră convenabilă pentru tine. Spune-ne câte cutii ai și ce tip de mobilă — estimăm durata și îți confirmăm programarea." },
+        { "step": 2, "title": "Verificare piese", "icon": "ruler", "badge": "arrow", "text": "La sosire, verificăm împreună că toate piesele și accesoriile sunt prezente conform listei din instrucțiuni." },
+        { "step": 3, "title": "Asamblare și montaj", "icon": "tools", "badge": "arrow", "text": "Asamblăm mobila conform instrucțiunilor producătorului, o fixăm în perete unde este necesar și reglăm ușile și sertarele." },
+        { "step": 4, "title": "Curățenie și predare", "icon": "shield-check", "badge": "check", "text": "Colectăm toate ambalajele, ștergem mobila și predăm spațiul gata de folosit." }
+      ],
+      "pricing": [
+        { "label": "Asamblare dulap simplu (2 uși)", "price": "150–250 lei", "unit": "buc" },
+        { "label": "Asamblare dulap cu glisante / șifonier mare", "price": "300–500 lei", "unit": "buc" },
+        { "label": "Montaj bucătărie completă (corpuri inferioare + superioare)", "price": "800–1500 lei", "unit": "proiect" },
+        { "label": "Asamblare pat cu somieră", "price": "200–350 lei", "unit": "buc" },
+        { "label": "Montaj rafturi sau bibliotecă", "price": "100–200 lei", "unit": "buc" }
+      ],
+      "price_note": "Prețurile variază în funcție de numărul de corpuri, complexitatea montajului și dacă este necesară fixarea în perete. Obții prețul exact după ce ne comunici lista de mobilă.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Montați și mobilă de la alte magazine, nu doar IKEA?", "answer": "Da, montăm mobilă de la orice producător sau magazin — IKEA, Jysk, Mobexpert, Brico Dépôt sau comandată online." },
+        { "question": "Ce se întâmplă dacă lipsesc piese din cutie?", "answer": "Îți comunicăm imediat ce lipsește. Poți contacta magazinul pentru piesele lipsă, iar noi revenim să finalizăm montajul fără cost suplimentar de deplasare." },
+        { "question": "Fixați mobila în perete pentru siguranță?", "answer": "Da, fixăm în perete toate piesele care necesită ancorare (dulapuri înalte, rafturi, biblioteci) pentru a preveni răsturnarea." },
+        { "question": "Puteți veni în aceeași zi?", "answer": "De cele mai multe ori da, dacă suni înainte de prânz. Avem echipe disponibile zilnic, inclusiv sâmbăta." },
+        { "question": "Montați și electrocasnicele în bucătărie (mașină de spălat vase, cuptor)?", "answer": "Da, montăm și racordăm electrocasnicele încorporate — cuptor, hotă, mașină de spălat vase — împreună cu montajul bucătăriei." }
+      ]
+    },
+    {
+      "enabled": true,
+      "order": 6,
+      "title": "Renovări",
+      "slug": "renovari",
+      "image": "/photos/service1.png",
+      "alt": "Renovări",
+      "modal_subtitle": "Renovări complete de la A la Z",
+      "modal_description": "Gestionăm renovarea completă a apartamentului sau casei tale — de la demolări la finisajele finale. O singură echipă, un singur contract, zero bătăi de cap.",
+      "hero_subtitle": "Renovări complete de apartamente și case — o echipă, un contract, rezultat garantat. Fără subantreprenori, fără surprize.",
+      "tasks": [
+        "Demolări controlate și pregătire spațiu",
+        "Compartimentări interioare (rigips / zidărie)",
+        "Turnare șape și nivelare pardoseli",
+        "Refacere instalații electrice și sanitare",
+        "Montaj finisaje (gresie, parchet, tavan)",
+        "Vopsitorie, tapete și tencuieli decorative",
+        "Montaj uși, ferestre și mobilier"
+      ],
+      "benefits": [
+        "Un singur punct de contact pentru întregul proiect",
+        "Termen de execuție respectat și garantat",
+        "Materiale premium la prețuri de producător",
+        "Garanție 24 de luni pentru toate lucrările"
+      ],
+      "process": [
+        { "step": 1, "title": "Consultanță și proiect", "icon": "search", "badge": "check", "text": "Discutăm viziunea ta, vizualizăm spațiul și elaborăm un plan detaliat cu toate lucrările, materialele și termenele." },
+        { "step": 2, "title": "Demolare și structură", "icon": "clipboard", "badge": "arrow", "text": "Se execută demolările necesare, compartimentările, instalațiile și pregătirea suprafețelor pentru finisaje." },
+        { "step": 3, "title": "Finisaje și montaj", "icon": "tools", "badge": "arrow", "text": "Se aplică finisajele — gresie, parchet, vopsea, tavan — și se montează ușile, ferestrele și mobilierul." },
+        { "step": 4, "title": "Control calitate și predare", "icon": "key", "badge": "check", "text": "Inspecție finală împreună cu clientul, remediere oricărei observații și predarea cheilor cu documentația de garanție." }
+      ],
+      "pricing": [
+        { "label": "Renovare parțială (o cameră)", "price": "5000–12000 lei", "unit": "cameră" },
+        { "label": "Renovare completă apartament 1 cameră", "price": "15000–25000 lei", "unit": "proiect" },
+        { "label": "Renovare completă apartament 2 camere", "price": "25000–45000 lei", "unit": "proiect" },
+        { "label": "Renovare baie (la cheie)", "price": "8000–18000 lei", "unit": "proiect" },
+        { "label": "Renovare bucătărie (la cheie)", "price": "7000–15000 lei", "unit": "proiect" }
+      ],
+      "price_note": "Prețurile sunt orientative și includ manopera. Materialele se estimează separat în funcție de alegerea clientului. Prețul final se stabilește după vizita de evaluare și semnarea contractului.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Cât durează renovarea completă a unui apartament de 2 camere?", "answer": "În medie 4–8 săptămâni, în funcție de volumul lucrărilor, disponibilitatea materialelor și complexitatea finisajelor alese." },
+        { "question": "Pot locui în apartament pe durata renovării?", "answer": "Pentru renovări parțiale (o cameră), de obicei da. Pentru renovări complete, recomandăm să locuiți temporar în altă parte pentru confortul și siguranța dvs." },
+        { "question": "Oferiți și servicii de design interior?", "answer": "Colaborăm cu designeri de interior cu care putem pune în contact clientul. Putem implementa orice proiect de design, indiferent de autor." },
+        { "question": "Cum se face plata? Există avans?", "answer": "Lucrăm cu un avans de 30–40% la semnarea contractului, apoi tranșe pe etape de execuție și plata finală la predarea lucrării." },
+        { "question": "Ce se întâmplă dacă apar probleme neprevăzute (conducte vechi, igrasie)?", "answer": "Te informăm imediat ce descoperim orice situație neprevăzută, prezentăm opțiunile și costul suplimentar — nimic nu se execută fără acordul tău explicit." }
+      ]
+    },
+    {
+      "enabled": true,
+      "order": 7,
+      "title": "Instalare tehnică",
+      "slug": "instalare-tehnica",
+      "image": "/photos/conditioner.png",
+      "alt": "Instalare tehnică",
+      "modal_subtitle": "Climatizare, ventilație și sisteme inteligente",
+      "modal_description": "Instalăm și întreținem aparate de aer condiționat, sisteme de ventilație, pompe de căldură și echipamente smart home — pentru un confort termic optim pe tot parcursul anului.",
+      "hero_subtitle": "Montaj aparate de aer condiționat și sisteme tehnice — instalare corectă, gaz certificat, garanție inclusă.",
+      "tasks": [
+        "Montaj și punere în funcțiune aparate de aer condiționat (split, multi-split)",
+        "Demontare și relocare unități existente",
+        "Încărcare agent frigorific și verificare presiuni",
+        "Montaj sisteme de ventilație mecanică",
+        "Instalare pompe de căldură",
+        "Montaj sisteme smart home (termostate, senzori, automatizări)"
+      ],
+      "benefits": [
+        "Montaj realizat de tehnicieni certificați F-Gas",
+        "Funcționare eficientă și economică",
+        "Garanție pentru instalare și echipament",
+        "Service și întreținere periodică disponibile"
+      ],
+      "process": [
+        { "step": 1, "title": "Consultanță și alegere echipament", "icon": "search", "badge": "check", "text": "Evaluăm suprafața, orientarea și nevoile tale termice și recomandăm echipamentul optim ca putere și eficiență energetică." },
+        { "step": 2, "title": "Pregătire și trasare", "icon": "clipboard", "badge": "arrow", "text": "Se stabilesc pozițiile unităților interior și exterior, se trasează traseul pentru conducte și se execută găurile necesare." },
+        { "step": 3, "title": "Montaj și racordare", "icon": "zap", "badge": "arrow", "text": "Se fixează unitățile, se conectează conductele de agent frigorific și cablurile electrice, se izolează și se maschează traseele." },
+        { "step": 4, "title": "Punere în funcțiune", "icon": "shield-check", "badge": "check", "text": "Se verifică etanșeitatea, se încarcă agentul frigorific la presiunea corectă și se testează funcționarea în toate modurile." }
+      ],
+      "pricing": [
+        { "label": "Montaj aparat aer condiționat 9000–12000 BTU", "price": "800–1200 lei", "unit": "buc" },
+        { "label": "Montaj aparat aer condiționat 18000–24000 BTU", "price": "1000–1500 lei", "unit": "buc" },
+        { "label": "Demontare + relocare unitate existentă", "price": "600–900 lei", "unit": "buc" },
+        { "label": "Încărcare agent frigorific R32/R410A", "price": "400–700 lei", "unit": "intervenție" },
+        { "label": "Montaj sistem ventilație mecanică (VMC)", "price": "2000–5000 lei", "unit": "proiect" }
+      ],
+      "price_note": "Prețurile includ manopera de montaj și piesele consumabile (coliere, spumă, cablu). Conducta de cupru și echipamentul se calculează separat sau pot fi furnizate de noi la cerere.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Tehnicienii voștri sunt certificați pentru lucrul cu agenți frigorifici?", "answer": "Da, toți tehnicienii noștri dețin certificat F-Gas categoria I, obligatoriu prin lege pentru manipularea agenților frigorifici." },
+        { "question": "Ce marcă de aer condiționat recomandați?", "answer": "Lucrăm cu toate mărcile principale — Daikin, Mitsubishi, LG, Samsung, Gree. Recomandăm în funcție de buget și necesități; le putem furniza noi sau montăm echipamentul tău." },
+        { "question": "Oferiți și servicii de curățare și întreținere periodică?", "answer": "Da, oferim servicii de curățare filtre, igienizare completă a unității interioare și verificare tehnică — recomandat o dată pe an." },
+        { "question": "Cât durează montajul unui aparat de aer condiționat?", "answer": "Montajul standard pentru un split durează 3–5 ore. Multi-split sau sisteme cu mai multe unități pot dura o zi întreagă." },
+        { "question": "Puteți instala aerul condiționat la bloc, la etaj?", "answer": "Da, lucrăm și la etaje superioare. Dacă unitatea exterioară trebuie montată în locuri greu accesibile, folosim echipamente de acces la înălțime." }
+      ]
+    },
+    {
+      "enabled": true,
+      "order": 8,
+      "title": "Etanșare și izolare",
+      "slug": "etansare-si-izolare",
+      "image": "/photos/izolare.jpg",
+      "alt": "Etanșare și izolare",
+      "modal_subtitle": "Izolație eficientă pentru facturi mai mici și confort mai mare",
+      "modal_description": "Rezolvăm problemele de igrasie, punți termice, infiltrații și zgomot. Izolăm termic și fonic pereții, acoperișurile, subsolurile și terasele pentru o locuință confortabilă tot anul.",
+      "hero_subtitle": "Etanșare infiltrații, izolare termică și fonică — eliminăm igrasie, zgomot și punți termice pentru totdeauna.",
+      "tasks": [
+        "Hidroizolație terase, balcoane și băi",
+        "Izolație termică exterioară (polistiren / vată minerală)",
+        "Tratament antiigrasie și impermeabilizare subsoluri",
+        "Etanșare ferestre, uși și rosturi",
+        "Izolație fonică pereți și pardoseli",
+        "Izolație termică mansarde și acoperișuri"
+      ],
+      "benefits": [
+        "Eliminarea igrasiei și mucegaiului",
+        "Reducerea pierderilor de căldură cu până la 40%",
+        "Confort fonic îmbunătățit semnificativ",
+        "Garanție pentru hidroizolație și sisteme de izolare"
+      ],
+      "process": [
+        { "step": 1, "title": "Diagnostic și identificare surse", "icon": "search", "badge": "check", "text": "Inspectăm spațiul, identificăm sursele de infiltrații, punțile termice și zonele cu probleme fonice și elaborăm un plan de intervenție." },
+        { "step": 2, "title": "Pregătire suprafețe", "icon": "layers", "badge": "arrow", "text": "Se curăță și se tratează suprafețele afectate, se îndepărtează straturile deteriorate și se asigură suportul pentru sistemul de izolare." },
+        { "step": 3, "title": "Aplicare sistem de izolare", "icon": "tools", "badge": "arrow", "text": "Se aplică stratul de izolație (termic, fonic sau hidro) conform specificațiilor producătorului, cu respectarea tehnologiei de execuție." },
+        { "step": 4, "title": "Finisaje și verificare", "icon": "shield-check", "badge": "check", "text": "Se aplică finisajele de protecție, se verifică etanșeitatea și se testează eficiența izolației înainte de predarea lucrării." }
+      ],
+      "pricing": [
+        { "label": "Hidroizolație terasă / balcon (membrană bituminoasă)", "price": "120–200 lei", "unit": "m²" },
+        { "label": "Izolație termică exterioară (polistiren 10 cm + tencuială)", "price": "200–320 lei", "unit": "m²" },
+        { "label": "Tratament antiigrasie perete (sistem injecție)", "price": "150–280 lei", "unit": "ml" },
+        { "label": "Etanșare rosturi ferestre / uși", "price": "25–50 lei", "unit": "ml" },
+        { "label": "Izolație fonică pardoseală (placă rezilientă + șapă)", "price": "80–140 lei", "unit": "m²" }
+      ],
+      "price_note": "Prețurile variază semnificativ în funcție de suprafață, tipul sistemului ales și starea suportului existent. Evaluarea la fața locului este esențială pentru un deviz corect.",
+      "why_choose_us": [],
+      "faq": [
+        { "question": "Puteți rezolva definitiv problema de igrasie la subsol?", "answer": "Depinde de sursa problemei. Aplicăm soluții de impermeabilizare activă și injecții chimice care rezolvă definitiv igrasia de infiltrație. Pentru igrasia de condensare, recomandăm soluții combinate de izolare și ventilație." },
+        { "question": "Ce diferență este între izolația cu polistiren și vată minerală?", "answer": "Polistirenul oferă izolare termică superioară la preț mai mic și este hidrofob. Vata minerală oferă și izolare fonică mai bună și este rezistentă la foc — recomandată pentru clădiri cu cerințe superioare de siguranță." },
+        { "question": "Cât de mult pot reduce factura la căldură după izolarea exterioară?", "answer": "În funcție de starea inițială a clădirii, reducerea poate fi de 30–50% pentru încălzire. Perioada de amortizare a investiției este de obicei 5–10 ani." },
+        { "question": "Hidroizolația terasei afectează stratul de finisaj existent?", "answer": "Da, de obicei este necesar să se ridice placările sau pietriș existent, să se aplice membrana și să se refacă finisajul. Includem toate aceste lucrări în deviz." },
+        { "question": "Oferiți garanție pentru hidroizolație?", "answer": "Da, oferim garanție de 5 ani pentru lucrările de hidroizolație executate cu membrane bituminoase sau lichide, condiționat de lipsa intervențiilor ulterioare neautorizate." }
       ]
     }
   ]

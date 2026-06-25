@@ -1,0 +1,124 @@
+---
+const { serviceTitle = "", heading = "Solicită o ofertă gratuită", subtitle = "Completează formularul și te vom contacta în cel mai scurt timp." } = Astro.props;
+---
+<div class="service-form-container">
+  <h3 class="form-title">{heading}</h3>
+  <p class="form-subtitle">{subtitle}</p>
+  <form
+    class="consultation-form service-consultation-form"
+    name="oferta"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="oferta" />
+    <input type="hidden" name="service" value={serviceTitle} />
+    <p style="display:none"><label>Nu completa: <input name="bot-field" /></label></p>
+    <div class="form-group">
+      <div class="input-wrapper">
+        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <input type="text" id="sf-name" name="name" placeholder="Numele tău" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-wrapper" id="sf-phone-wrapper">
+        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.21 6.21l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <input type="tel" id="sf-phone" name="phone" placeholder="Telefon" inputmode="tel" pattern="[\+]?[0-9\s\-]{9,17}" required autocomplete="tel">
+      </div>
+      <span class="phone-error" id="sf-phone-error">Introduceți doar cifre, spații sau +</span>
+    </div>
+    <div class="form-group">
+      <div class="input-wrapper">
+        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <input type="email" id="sf-email" name="email" placeholder="Email (opțional)">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-wrapper input-wrapper--textarea">
+        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <textarea id="sf-message" name="message" placeholder={`Spune-ne câteva detalii despre lucrarea de ${serviceTitle.toLowerCase()}...`} rows="3"></textarea>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-form">
+      Trimite cererea
+      <img src="/photos/right-up.png" alt="arrow" class="btn-arrow">
+    </button>
+  </form>
+  <div class="form-confirmation service-form-confirmation" id="sf-confirmation">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="confirmation-icon"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <h4>Cererea a fost trimisă!</h4>
+    <p>Vă vom contacta în cel mai scurt timp.</p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const phoneInput = document.getElementById('sf-phone');
+    const phoneError = document.getElementById('sf-phone-error');
+    const phoneWrapper = document.getElementById('sf-phone-wrapper');
+
+    if (phoneInput) {
+      phoneInput.addEventListener('input', function () {
+        const cleaned = this.value.replace(/[^\d\+\s\-]/g, '');
+        if (this.value !== cleaned) {
+          this.value = cleaned;
+        }
+        const digits = cleaned.replace(/\D/g, '');
+        if (cleaned.length > 0 && digits.length < 9) {
+          phoneWrapper.classList.add('input-error');
+          phoneError.classList.add('visible');
+          phoneError.textContent = 'Numărul trebuie să conțină cel puțin 9 cifre.';
+        } else if (cleaned.length > 0 && digits.length > 15) {
+          phoneWrapper.classList.add('input-error');
+          phoneError.classList.add('visible');
+          phoneError.textContent = 'Numărul este prea lung (max 15 cifre).';
+        } else {
+          phoneWrapper.classList.remove('input-error');
+          phoneError.classList.remove('visible');
+        }
+      });
+
+      phoneInput.addEventListener('blur', function () {
+        if (this.value.trim() === '') {
+          phoneWrapper.classList.remove('input-error');
+          phoneError.classList.remove('visible');
+        }
+      });
+    }
+
+    const form = document.querySelector('.service-consultation-form');
+    const confirmation = document.getElementById('sf-confirmation');
+
+    if (form && confirmation) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const digits = phoneInput.value.replace(/\D/g, '');
+        if (digits.length < 9) {
+          phoneWrapper.classList.add('input-error');
+          phoneError.classList.add('visible');
+          phoneError.textContent = 'Numărul trebuie să conțină cel puțin 9 cifre.';
+          phoneInput.focus();
+          return;
+        }
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        }).catch(function () {});
+
+        form.style.display = 'none';
+        confirmation.classList.add('visible');
+
+        setTimeout(function () {
+          form.reset();
+          form.style.display = '';
+          confirmation.classList.remove('visible');
+          phoneWrapper.classList.remove('input-error');
+          phoneError.classList.remove('visible');
+        }, 4000);
+      });
+    }
+  })();
+</script>

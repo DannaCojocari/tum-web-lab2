@@ -1,3 +1,47 @@
 /* @import "./reset.css"; */
 @import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — edit here to retheme the whole site
+   ============================================================ */
+:root {
+  /* ── Background surfaces ── */
+  --color-bg-page:        #112236;   /* main page background (dark navy) */
+  --color-bg-nav:         #0d1117e6; /* navbar (semi-transparent dark) */
+  --color-bg-section-alt: #f0e6d8;   /* alternate section bg (slightly lighter dark) */
+  --color-bg-card:        #1c2330;   /* card / form / modal background */
+  --color-bg-input:       #0d1117;   /* form input background */
+  --color-bg-footer:      #010409;   /* footer background */
+
+  /* ── Brand accent ── */
+  --color-accent:         #f0a500;   /* yellow/amber — logo Fix, highlights, primary CTA */
+  --color-accent-hover:   #d4920a;   /* darker amber on hover */
+  --color-accent-subtle:  rgba(240, 165, 0, 0.12); /* tinted bg for badges etc. */
+
+  /* ── Blue CTA (form submit) ── */
+  --color-cta-blue:       #2563eb;
+  --color-cta-blue-hover: #1d4ed8;
+
+  /* ── Text ── */
+  --color-text-primary:   #f0f6fc;   /* main headings & body on dark bg */
+  --color-text-secondary: #8b949e;   /* muted / subtitle text */
+  --color-text-muted:     #6e7681;   /* very muted — labels, placeholders */
+  --color-text-on-accent: #0d1117;   /* text ON yellow buttons */
+  --color-text-on-dark:   #f0f6fc;   /* text ON dark buttons */
+  --color-text-alt:       #0d1117e6; /* text on light bg (slightly transparent dark) */
+
+  /* ── Borders ── */
+  --color-border:         #30363d;   /* default border */
+  --color-border-light:   #21262d;   /* lighter divider */
+
+  /* ── Semantic / status ── */
+  --color-error:          #f85149;   /* form validation error */
+  --color-success:        #3fb950;   /* confirmation / success */
+
+  /* ── Shadows (rgba — kept separate because they reference no hex token) ── */
+  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-nav:    0 2px 10px rgba(0, 0, 0, 0.3);
+  --shadow-modal:  0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
 @import "./style.css" layer(components);

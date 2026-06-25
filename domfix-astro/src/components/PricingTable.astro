@@ -1,0 +1,15 @@
+---
+const { items = [], note = "" } = Astro.props;
+---
+<div class="pricing-table">
+  {items.map((item) => (
+    <div class="pricing-row">
+      <span class="pricing-label">{item.label}</span>
+      <span class="pricing-value">
+        {item.price}
+        {item.unit && <span class="pricing-unit"> / {item.unit}</span>}
+      </span>
+    </div>
+  ))}
+  {note && <p class="pricing-note">{note}</p>}
+</div>

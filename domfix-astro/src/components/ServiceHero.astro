@@ -1,0 +1,26 @@
+---
+const { title, subtitle, image, alt } = Astro.props;
+---
+<section class="service-hero">
+  <div class="service-hero-background">
+    <img src={image} alt={alt} />
+    <div class="service-hero-overlay"></div>
+  </div>
+  <div class="container max-w-[90%] mx-auto px-5">
+    <div class="service-hero-content">
+      <p class="service-hero-eyebrow">Servicii DomFix</p>
+      <h1 class="service-hero-title">{title}</h1>
+      <p class="service-hero-subtitle">{subtitle}</p>
+      <div class="service-hero-cta-group flex gap-4 mt-3 flex-wrap">
+        <a href="#oferta" class="btn btn-primary">
+          Solicită ofertă
+          <img src="/photos/right-up.png" alt="arrow" class="btn-arrow">
+        </a>
+        <a href="tel:+37360138297" class="btn btn-secondary">
+          Sună acum
+          <img src="/photos/right-up.png" alt="arrow" class="btn-arrow">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

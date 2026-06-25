@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import TimelineStep from '../components/TimelineStep.astro';
 import PortfolioItem from '../components/PortfolioItem.astro';
 import Footer from '../components/Footer.astro';
 import Mascot from '../components/Mascot.astro';
@@ -23,17 +22,19 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
   <Navbar />
 
   <!-- Dark overlay for mobile nav drawer -->
-  <div class="nav-overlay" id="nav-overlay"></div>
 
   <section class="hero">
     <div class="hero-background">
-      <img src="photos/background.png" alt="DomFix- renovări profesionale" />
+      <img src="photos/background_new.jpg" alt="DomFix- renovări profesionale" />
       <div class="hero-overlay"></div>
     </div>
     <div class="container max-w-[90%] mx-auto px-5">
       <div class="hero-content">
         <div class="hero-text">
-          <h2 class="hero-title">{hero.title}</h2>
+          <h2 class="hero-title">
+            <span class="hero-title-main">{hero.title_line1}</span>
+            <span class="hero-title-accent block">{hero.title_line2}</span>
+          </h2>
           <p class="subheadline">{hero.subtitle}</p>
           <div class="cta-group flex gap-4 mt-3 flex-wrap">
             <a href={hero.cta_primary_href} class="btn btn-primary">
@@ -50,7 +51,15 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
           <div class="form-container">
             <h3 class="form-title">Obține o consultație gratuită</h3>
             <p class="form-subtitle">Completează formularul și te vom contacta în cel mai scurt timp</p>
-            <form class="consultation-form" action="#" method="POST">
+            <form
+              class="consultation-form"
+              name="consultatie"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="consultatie" />
+              <p style="display:none"><label>Nu completa: <input name="bot-field" /></label></p>
               <div class="form-group">
                 <div class="input-wrapper">
                   <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -60,7 +69,7 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
               <div class="form-group">
                 <div class="input-wrapper">
                   <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                  <input type="email" id="email" name="email" placeholder="Email" required>
+                  <input type="email" id="email" name="email" placeholder="Email (opțional)">
                 </div>
               </div>
               <div class="form-group">
@@ -75,10 +84,14 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
                   <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                   <select id="service" name="service" required>
                     <option value="">Tipul de serviciu</option>
-                    <option value="renovation">Renovări generale</option>
-                    <option value="interior">Finisaje interioare</option>
-                    <option value="kitchen">Renovare bucătărie</option>
-                    <option value="bathroom">Renovare baie</option>
+                    <option value="electricitate">Electricitate</option>
+                    <option value="instalatii-sanitare">Instalații sanitare</option>
+                    <option value="usi-si-ferestre">Uși și ferestre</option>
+                    <option value="tapete-si-vopsit">Tapete și vopsit</option>
+                    <option value="montaj-mobila">Montaj mobilă</option>
+                    <option value="renovari">Renovări</option>
+                    <option value="instalare-tehnica">Instalare tehnică</option>
+                    <option value="etansare-si-izolare">Etanșare și izolare</option>
                     <option value="other">Altele</option>
                   </select>
                 </div>
@@ -121,53 +134,23 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
   <section class="services py-[100px] px-5 scroll-mt-[100px]" id="services">
     <div class="container max-w-[90%] mx-auto px-5">
       <div class="services-header text-center max-w-[800px] mx-auto mb-20">
-        <h2 class="services-title text-[3rem] font-bold text-[#4a3728] mb-5 tracking-[-0.02em]">Serviciile noastre</h2>
-        <p class="services-description text-xl text-[#8b6b55] leading-[1.6]">
+        <h2 class="services-title text-[3rem] font-bold mb-5 tracking-[-0.02em]">Serviciile noastre</h2>
+        <p class="services-description text-xl leading-[1.6]">
           Noi oferim servicii complete de renovare și construcție pentru a transforma spațiul tău în visul pe care ți-l dorești.
         </p>
       </div>
 
-      <div class="services-grid grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+      <div class="services-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
         {services.map((s) => (
           <ServiceCard
             number={s.order}
             title={s.title}
             image={s.image}
             alt={s.alt}
+            slug={s.slug}
           />
         ))}
       </div>
-    </div>
-  </section>
-
-  <section class="process py-[5vw] px-[4vw] md:py-[3vh] md:px-[1.5vw] bg-[#f0e6d8] m-[2%] md:m-[1%] rounded-[20px] scroll-mt-[76px] md:scroll-mt-[100px]" id="process">
-    <div class="container max-w-[90%] mx-auto px-5">
-
-      <!-- Top: title + description left, image right -->
-      <div class="process-top grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-stretch mb-7 md:mb-10">
-        <div class="process-top-text flex flex-col justify-center pr-3">
-            <h2 class="process-title text-[1.2rem] md:text-[2.5rem] font-bold text-[#4a3728] mb-[10px] tracking-[-0.02em] leading-[1.2]">Procesul de renovare</h2>
-          <p class="process-description text-[0.8rem] md:text-[1.2rem] text-[#5a4a3a] leading-[1.5]">
-            Fiecare proiect este gestionat profesional, de la planificare până la finalizare,
-            pentru a asigura rezultate de calitate și satisfacția completă a clientului.
-          </p>
-        </div>
-        <div class="process-image w-full h-[200px] md:h-[30vh] rounded-xl md:rounded-2xl overflow-hidden">
-            <img src="photos/process.png" alt="Procesul de renovare" class="w-full h-full object-cover">
-        </div>
-      </div>
-
-      <!-- Bottom: horizontal timeline -->
-      <div class="process-timeline px-5 pb-5">
-<div class="timeline-track grid grid-cols-1 md:grid-cols-4 items-stretch relative gap-4 md:gap-0">
-
-          <TimelineStep step={1} title="Planificare și evaluare" text="Se analizează spațiul, se stabilesc lucrările necesare, bugetul și materialele." />
-          <TimelineStep step={2} title="Pregătirea și lucrările de bază" text="Se îndepărtează elementele vechi și se execută lucrările structurale și instalațiile necesare." />
-          <TimelineStep step={3} title="Finisaje și montaj" text="Se realizează finisajele interioare și se montează pardoselile, ușile și elementele decorative." />
-          <TimelineStep step={4} title="Verificare și finalizare" text="Se montează echipamentele finale, se fac verificările și curățenia, iar spațiul devine gata de utilizare." />
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -220,7 +203,7 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
           </div>
 
           <div class="about-cta mt-5">
-            <a href="tel:+37376009015" class="btn btn-primary">
+            <a href="tel:+37360138297" class="btn btn-primary">
               Contactează-ne acum
               <img src="photos/right-up.png" alt="arrow" class="btn-arrow">
             </a>
@@ -286,19 +269,18 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
       }
     })();
 
-    // Consultation form submit
+          // Consultation form submit
     (function () {
       const form = document.querySelector('.consultation-form');
       const confirmation = document.getElementById('form-confirmation');
+      const phoneInput = document.getElementById('phone');
+      const phoneWrapper = document.getElementById('phone-wrapper');
+      const phoneError = document.getElementById('phone-error');
 
       if (form && confirmation) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
 
-          // Extra phone guard
-          const phoneInput = document.getElementById('phone');
-          const phoneWrapper = document.getElementById('phone-wrapper');
-          const phoneError = document.getElementById('phone-error');
           const digits = phoneInput.value.replace(/\D/g, '');
           if (digits.length < 9) {
             phoneWrapper.classList.add('input-error');
@@ -308,11 +290,15 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
             return;
           }
 
-          // Show confirmation, hide form
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString()
+          }).catch(function () {});
+
           form.style.display = 'none';
           confirmation.classList.add('visible');
 
-          // Reset after 4 seconds
           setTimeout(function () {
             form.reset();
             form.style.display = '';
@@ -342,24 +328,24 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
       let benefitsHTML = service.benefits.map(benefit => `<li class="text-[0.9rem] md:text-[1.05rem] text-[#5a3e2b] leading-[1.8] py-2 pl-[10px]">— ${benefit}</li>`).join('');
       
       modalBody.innerHTML = `
-        <h2 class="modal-title text-[1.3rem] md:text-[2rem] font-bold text-[#4a3728] mb-[10px] tracking-[-0.02em] pr-8 md:pr-0">${service.title}</h2>
+        <h2 class="modal-title text-[1.3rem] md:text-[2rem] font-bold mb-[10px] tracking-[-0.02em] pr-8 md:pr-0">${service.title}</h2>
         <p class="modal-subtitle text-[1rem] md:text-[1.25rem] text-[#8b6b55] italic mb-5 font-medium">${service.modal_subtitle}</p>
         <p class="modal-description text-[0.95rem] md:text-[1.1rem] text-[#5a3e2b] leading-[1.7] mb-[30px]">${service.modal_description}</p>
         
         <div class="modal-sections flex flex-col md:flex-row gap-5 md:gap-[30px] mt-5">
           <div class="modal-section flex-1">
-            <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-[15px]">Ce realizăm</h3>
+            <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold mb-[15px]">Ce realizăm</h3>
             <ul class="modal-list list-none p-0 mb-5">${tasksHTML}</ul>
           </div>
           
           <div class="modal-section flex-1">
-            <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold text-[#4a3728] mb-[15px]">Beneficii</h3>
+            <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold mb-[15px]">Beneficii</h3>
             <ul class="modal-list list-none p-0 mb-5">${benefitsHTML}</ul>
           </div>
         </div>
         
         <div class="modal-cta mt-10 text-center pt-[30px] border-t border-[#d4bfa8]">
-          <a href="tel:+37376009015" class="modal-btn inline-block bg-[#6b4c38] text-[#faf5ee] py-3 md:py-4 px-6 md:px-10 text-[0.95rem] md:text-[1.1rem] font-semibold rounded-lg no-underline">Fă o programare</a>
+          <a href="tel:+37360138297" class="modal-btn inline-block bg-[#6b4c38] text-[#faf5ee] py-3 md:py-4 px-6 md:px-10 text-[0.95rem] md:text-[1.1rem] font-semibold rounded-lg no-underline">Fă o programare</a>
         </div>
       `;
       
@@ -436,53 +422,11 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
         document.body.style.overflow = 'auto';
       }
     });
-
-    // Mobile navigation hamburger toggle
-    (function () {
-      const hamburger = document.getElementById('nav-hamburger');
-      const navMenu = document.getElementById('nav-menu');
-      const overlay = document.getElementById('nav-overlay');
-
-      function openMenu() {
-        navMenu.classList.add('open');
-        hamburger.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
-        if (overlay) overlay.classList.add('active');
-      }
-
-      function closeMenu() {
-        navMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        if (overlay) overlay.classList.remove('active');
-      }
-
-      if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function () {
-          navMenu.classList.contains('open') ? closeMenu() : openMenu();
-        });
-
-        // Close drawer, then let native anchor navigation scroll the page
-        navMenu.querySelectorAll('a').forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeMenu();
-          });
-        });
-
-        // Close when clicking the overlay
-        if (overlay) overlay.addEventListener('click', closeMenu);
-
-        // Close with Escape key
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') closeMenu();
-        });
-      }
-    })();
   </script>
 
   <!-- Mobile-only sticky CTA bar (hidden on desktop) -->
   <div class="mobile-sticky-cta mobile-only">
-    <a href="tel:+37376009015" class="sticky-call">
+    <a href="tel:+37360138297" class="sticky-call">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.88a16 16 0 0 0 6.21 6.21l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Sună acum
     </a>
