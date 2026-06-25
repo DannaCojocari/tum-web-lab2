@@ -17,10 +17,6 @@ exports.handler = async (event) => {
   const service = formData.service || (form_name === 'oferta' ? 'serviciu solicitat' : 'servicii de renovare');
   const message = formData.message || '';
 
-  if (!email || !email.includes('@')) {
-    return { statusCode: 200, body: 'No valid email, skipping.' };
-  }
-
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -51,14 +47,17 @@ Chișinău, Moldova`,
   };
 
   try {
+    if (email && email.includes('@')) {
+        await transporter.sendMail(mailOptions);
+    }
     await transporter.sendMail({
-      from: `"DomFix Site" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
-      subject: `Cerere nouă — ${service}`,
-      text: `Cerere nouă primită pe domfix.md:\n\nNume: ${name}\nTelefon: ${phone}\nEmail: ${email}\nServiciu: ${service}\nMesaj: ${message || '—'}`,
+        from: `"DomFix Site" <${process.env.GMAIL_USER}>`,
+        to: process.env.GMAIL_USER,
+        subject: `Cerere nouă — ${service}`,
+        text: `Cerere nouă primită pe domfix.md:\n\nNume: ${name}\nTelefon: ${phone}\nEmail: ${email || '—'}\nServiciu: ${service}\nMesaj: ${message || '—'}`,
     });
     return { statusCode: 200, body: 'Email sent.' };
-  } catch (err) {
+    } catch (err) {
     console.error('Mail error:', err);
     return { statusCode: 500, body: 'Failed to send email.' };
   }
