@@ -1336,7 +1336,7 @@ a {
 
   .hero-form {
     justify-content: center;
-    background: var(--color-bg-section-alt);
+    background: var(--color-bg-page);
     padding: 40px 20px 40px;
     position: relative;
     z-index: 2;
