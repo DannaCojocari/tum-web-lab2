@@ -8,7 +8,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: 'Invalid payload' };
   }
 
-  const { data, form_name } = payload;
+  const { data, form_name } = payload.payload;
   console.log('PAYLOAD:', JSON.stringify(payload));
   const formData = data || payload;
   const name    = formData.name    || 'Client';
