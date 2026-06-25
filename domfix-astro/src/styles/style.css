@@ -1283,7 +1283,7 @@ a {
 @media (max-width: 768px) {
   .mobile-only { display: block; }
 
-  body { padding-bottom: 76px; }
+  body { padding-bottom: 0; }
 
   .nav-header { padding: 14px 0; }
 

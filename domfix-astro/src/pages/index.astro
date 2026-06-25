@@ -317,6 +317,15 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
     JSON.parse(document.getElementById('service-data').textContent)
       .forEach(s => { serviceDetails[s.order] = s; });
 
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
     // Get modal elements
     const modal = document.getElementById('serviceModal');
     const modalBody = document.getElementById('modalBody');
@@ -330,19 +339,19 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
       let benefitsHTML = service.benefits.map(benefit => `<li class="text-[0.9rem] md:text-[1.05rem] text-[#5a3e2b] leading-[1.8] py-2 pl-[10px]">— ${benefit}</li>`).join('');
       
       modalBody.innerHTML = `
-        <h2 class="modal-title text-[1.3rem] md:text-[2rem] font-bold mb-[10px] tracking-[-0.02em] pr-8 md:pr-0">${service.title}</h2>
-        <p class="modal-subtitle text-[1rem] md:text-[1.25rem] text-[#8b6b55] italic mb-5 font-medium">${service.modal_subtitle}</p>
-        <p class="modal-description text-[0.95rem] md:text-[1.1rem] text-[#5a3e2b] leading-[1.7] mb-[30px]">${service.modal_description}</p>
+        <h2 class="modal-title text-[1.3rem] md:text-[2rem] font-bold mb-[10px] tracking-[-0.02em] pr-8 md:pr-0">${escapeHtml(service.title)}</h2>
+        <p class="modal-subtitle text-[1rem] md:text-[1.25rem] text-[#8b6b55] italic mb-5 font-medium">${escapeHtml(service.modal_subtitle)}</p>
+        <p class="modal-description text-[0.95rem] md:text-[1.1rem] text-[#5a3e2b] leading-[1.7] mb-[30px]">${escapeHtml(service.modal_description)}</p>
         
         <div class="modal-sections flex flex-col md:flex-row gap-5 md:gap-[30px] mt-5">
           <div class="modal-section flex-1">
             <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold mb-[15px]">Ce realizăm</h3>
-            <ul class="modal-list list-none p-0 mb-5">${tasksHTML}</ul>
+            <ul class="modal-list list-none p-0 mb-5">${escapeHtml(tasksHTML)}</ul>
           </div>
           
           <div class="modal-section flex-1">
             <h3 class="modal-section-title text-[1.1rem] md:text-[1.3rem] font-bold mb-[15px]">Beneficii</h3>
-            <ul class="modal-list list-none p-0 mb-5">${benefitsHTML}</ul>
+            <ul class="modal-list list-none p-0 mb-5">${escapeHtml(benefitsHTML)}</ul>
           </div>
         </div>
         
@@ -435,6 +444,6 @@ const portfolio = portfolioData.items.sort((a, b) => a.order - b.order);
     <a href="#services" class="sticky-services">Serviciile noastre</a>
   </div>
 
-  <Mascot />
+  <!-- <Mascot /> -->
   <Footer />
 </Layout>

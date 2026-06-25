@@ -9,7 +9,6 @@ exports.handler = async (event) => {
   }
 
   const { data, form_name } = payload.payload;
-  console.log('PAYLOAD:', JSON.stringify(payload));
   const formData = data || payload;
   const name    = formData.name    || 'Client';
   const phone   = formData.phone   || '—';
